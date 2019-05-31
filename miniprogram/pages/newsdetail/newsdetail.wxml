@@ -1,0 +1,17 @@
+<import src="../../components/wxParse/wxParse.wxml" />
+<cu-custom bgColor="bg-white" isCustom="{{true}}"></cu-custom>
+
+<view style='padding:15rpx'>
+  <view >
+    <view class='title'>{{page.title}}</view>
+    <view class='cf'>
+        <view class='meta fl font-ns'>{{page.time}}</view>
+        <view class='meta fr'>{{page.author}}</view>
+    </view>
+
+    <view class='content solid-bottom'>
+      <template  is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+    <view class='content padding-tb padding-lr-xs text-center font-ns' style='line-height:1.5em'>From：{{page.url}}</view>
+</view>

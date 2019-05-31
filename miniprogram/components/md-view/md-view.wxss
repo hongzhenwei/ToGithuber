@@ -1,0 +1,24 @@
+@import "../wxParse/wxParse.wxss";
+
+.md-view {
+  font-family: 'Neustadt';
+  overflow: hidden;
+  font-size: 16px;
+  
+}
+
+.title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+image.avatar {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 6rpx;
+}
+
+image.icon {
+  width: 32rpx;
+  height: 32rpx;
+}

@@ -1,0 +1,39 @@
+<import src="/towxml/entry.wxml" />
+
+<tabbar tabbar="{{tabbar}}"></tabbar>
+
+<view class='pure_top'></view>
+
+<view class="cu-modal {{showmodal?'show':''}}"  style='background-color:rgba(0,0,0,0);z-index:1'>
+  <view class="cu-dialog " style='background-color:rgba(0,0,0,0)'>
+    <view class="demo5 shadow solid margin-bottom-xl">
+      <calendar cell-size="25" next="{{false}}" prev="{{false}}" show-more-days="{{true}}" calendar-style="demo5-calendar" header-style="demo5-header" board-style="demo5-board" days-color="{{demo5_days_style}}" binddayClick="dayClick" />
+    </view>
+    <view class='flex margin-top-xl'>
+      <view class='flex-twice flex align-center' style='justify-content: center'>
+        <view wx:if='{{showqiandao}}' bindtap='qiandao' class='font-ns text-xxl text-bold'>
+          <view class="today margin-bottom-lg">
+            <text>{{day}}</text>
+            <text class="monthStr">{{str}}</text>
+          </view>
+          {{tishi}}
+        </view>
+
+          <image src='/icon/icon_code_cur.png' mode='widthFix' style='width:120px;height:120px' wx:else></image>
+
+      </view>
+      <view class='flex-sub grid col-1 '>
+        <view class='margin-tb-lg flex' bindtap='tocodepersonal' style='justify-content: center'>
+          <image src='/icon/person.png' style='width:40px;height:40px'></image>
+
+        </view>
+        <view class='margin-tb-lg font-ns flex text-center text-bold ' style='font-size:1.5em;color:rgb(51,51,51)'bindtap='tocodeeveryday'>
+        code everyday
+        </view>
+        <view class='margin-tb-lg flex ' bindtap='tocodelist' style='justify-content: center'>
+          <image src='/icon/all.png' style='width:40px;height:40px'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

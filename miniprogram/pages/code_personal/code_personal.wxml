@@ -1,0 +1,54 @@
+<cu-custom bgColor="bg-white" isCustom="{{true}}">
+<view slot="content">收藏 & 笔记</view>
+
+</cu-custom>
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{item}}
+    </view>
+  </view>
+</scroll-view>
+
+<swiper class="screen-swiper " style='height:{{screenHeight/11*9}}rpx' current='{{TabCur}}' bindchange='tabSelect'>
+  <swiper-item>
+    <scroll-view scroll-y style='height:100%' bindscrolltolower='scrolltolower'>
+      <view class='cu-list menu'>
+        <block wx:for="{{favors}}">
+
+          <view class="cu-item arrow" bindtap='tocollectdetail' data-problemid='{{item.problemid}}'>
+            <view class="content">
+              {{index+1}}.
+              <text class="icon-tagfill text-red"></text>
+              <text class="text-black font-ns text-lg">{{item.title}}</text>
+            </view>
+            <view class="action">
+              <view class="cu-tag round bg-orange light font-ns text-lg">{{item.difficulty}}</view>
+            </view>
+          </view>
+
+        </block>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y style='height:100%' bindscrolltolower='scrolltolower'>
+      <view class='cu-list menu'>
+        <block wx:for="{{notes}}">
+          <view class="cu-item arrow" bindtap='tonotedetail' data-problemid='{{item.problemid}}'>
+            <view class="content">
+              {{index+1}}.
+              <text class="icon-tagfill text-red"></text>
+              <text class="text-black font-ns text-lg">{{item.title}}</text>
+            </view>
+            <view class="action">
+              <view class="cu-tag round bg-orange light font-ns  text-lg">{{item.difficulty}}</view>
+            </view>
+          </view>
+        </block>
+
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>

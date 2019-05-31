@@ -1,0 +1,5 @@
+<cu-custom bgColor="bg-white" isCustom="{{true}}"></cu-custom>
+
+<view class='md'>
+  <md md='{{md}}'></md>
+</view>

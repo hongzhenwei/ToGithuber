@@ -1,0 +1,39 @@
+<!-- 登录授权时的封面层 -->
+<!-- <view>
+  <view class="cu-modal {{ !hasUserInfo ?'show':''}}">
+    <view class="cu-dialog ">
+      <button bindgetuserinfo='getUserInfo' open-type='getUserInfo'>Login</button>
+    </view>
+  </view>
+</view> -->
+
+<tabbar tabbar="{{tabbar}}"></tabbar>
+
+<view class='container' style='height:{{windowHeight}}px'>
+  <!-- 上层轮播图 -->
+  <swiper class="screen-swiper " style='height:100%' bindchange='Swiperchange_y' vertical="{{true}}" current='0'>
+    <swiper-item>
+      <view class="bg-img" style="height:{{height}}rpx;background-image:url({{backgroundimg}});background-position:center;background-size:cover">
+        <view class='padding-tb-back'>
+          <view class=" padding-sm radius ">
+            <view class='flex justify-between'>
+              <text class='text-white font-an padding-lr-xs' style='font-size:3.0em;line-height:200rpx'>{{motto}}</text>
+              <view class="flex justify-center padding-lr-xs">
+              <view wx:if="{{!hasUserInfo}}" open-type="getUserInfo" class='cu-avatar  round bg-write shadow size'>
+              <button bindgetuserinfo='getUserInfo' open-type='getUserInfo' style='background-color: transparent;border:none'><text class='text-xxl font-ns'>activate</text></button>
+                 </view>
+              <block wx:else>
+                <view class='text-center animation-{{animation=="fade&shake"? "shake" :""}} animation-reverse' bindtap='toggle' data-class='fade&shake'>
+                  <view class="cu-avatar size round solids " style="background-image:url({{userInfo.avatarUrl}})">
+                  </view>
+                </view>
+              </block>
+            </view>
+            </view>
+            
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

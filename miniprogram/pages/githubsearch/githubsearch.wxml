@@ -1,0 +1,28 @@
+<cu-custom bgColor="bg-white" isCustom="{{true}}"></cu-custom>
+<view class="cu-bar bg-white search" style="top:{{CustomBar}}px">
+  <view class="search-form round">
+    <text class="icon-search"></text>
+    <input type="text" placeholder="{{querykey}}" confirm-type="search" bindinput="changeinput"bindconfirm="querysearh"></input>
+  </view>
+</view>
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{item}}
+    </view>
+  </view>
+</scroll-view>
+
+<swiper class="screen-swiper " style='height:{{screenHeight/11*9}}rpx' current='{{TabCur}}' bindchange='tabSelect' >
+  <swiper-item>
+    <scroll-view scroll-y style='height:100%' bindscrolltolower='scrolltolower' >
+      <repoList data='{{reposdata}}'/>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y style='height:100%' bindscrolltolower='scrolltolower'>
+      <userList data="{{usersdata}}"/>
+    </scroll-view>
+  </swiper-item>
+</swiper>

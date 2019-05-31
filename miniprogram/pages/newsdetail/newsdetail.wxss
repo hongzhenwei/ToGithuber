@@ -1,0 +1,27 @@
+/* pages/detailinfo/detailinfo.wxss */
+
+/* page{
+  background-color: white;
+} */
+
+.wxParse-p {
+  font-family: 'Neustadt';
+  line-height: 55rpx;
+  text-indent:1em;
+  margin:5px 0 10px 0
+}
+
+.title {
+  font-size: 1.5em;
+}
+
+.meta {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.from {
+  font-weight: 400;
+  font-size: 12px;
+  margin-top: 0.04em;
+}

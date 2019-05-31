@@ -1,0 +1,12 @@
+<block wx:for="{{data}}" wx:key>
+  <view class="padding-xs radius margin bg-white " style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);' bindtap='touserdetail' data-name='{{item.login}}'>
+    <view class="flex solid-bottom padding-sm align-start">
+      <view class='  radius'>
+        <view class="cu-avatar lg round" style="background-image:url({{item.avatar_url}});"></view>
+      </view>
+      <view class=' padding-left-sm radius' style='line-height:300%'>
+        <text class='text-lg font-ns'>{{item.login}}</text>
+      </view>
+    </view>
+  </view>
+</block>

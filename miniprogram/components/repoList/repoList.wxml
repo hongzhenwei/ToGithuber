@@ -1,0 +1,33 @@
+<block wx:for='{{data}}' wx:key>
+<view class='solid-bottom padding margin flex' bindtap='torepodetail' data-full_name="{{item.full_name}}" style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);overflow-x:scroll'>
+  <view class='flex-treble margin-right'>
+    <view class='padding-xs text-bold text-lg solid-bottom font-ns'>
+    {{item.full_name}}</view>
+    <view class='padding-xs text-content margin-top-sm font-ns'>{{item.description}}</view>
+  </view>
+  <view class="padding-xs text-df flex-sub grid col-1">
+    <view class=' bg-white radius' style='line-height:1.7rem'>
+      <text class='icon-favor font-ns'></text>:{{item.stargazers_count}}</view>
+    <view class=' bg-white radius' style='line-height:1.7rem'>
+      <text class='icon-fork font-ns'></text>:{{item.forks}}</view>
+    <view class=' bg-white   radius' style='line-height:1.7rem;color:red;'>
+      <text class='icon-newshot font-ns'></text>:{{item.language?item.language:'null'}}</view>
+  </view>
+</view>
+
+  <!-- <view class='margin' bindtap='torepodetail' data-full_name = '{{item.full_name}}'>
+    <view class='solid-bottom ' style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);'>
+      <view class='padding-xs text-blod text-lg '>
+        <text class='icon-babyfill padding-right-sm'></text>{{item.full_name}}</view>
+      <view class='padding-xs text-content '>{{item.description}}</view>
+      <view class="flex padding-xs text-df">
+        <view class='flex-sub bg-grey padding-sm  radius'>
+          <text class='icon-favor'></text>:{{item.stargazers_count}}</view>
+        <view class='flex-sub bg-grey padding-sm radius'>
+          <text class='icon-fork'></text>:{{item.forks}}</view>
+        <view class='flex-sub bg-grey padding-sm  radius'>
+          <text class='icon-newshot'></text>:{{item.language}}</view>
+      </view>
+    </view>
+  </view> -->
+</block>

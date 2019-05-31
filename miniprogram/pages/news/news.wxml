@@ -1,0 +1,141 @@
+<tabbar tabbar="{{tabbar}}">
+</tabbar>
+
+
+
+<refresh-view id='refreshView' backgroundColor="#000" bind:onRefresh="onPullDownRefresh" />
+
+<view class='pure_top'></view>
+
+<view class="cu-modal {{modalshow?'show':''}}" style='bottom:80rpx;background:linear-gradient(160deg, rgba(145, 122, 122, 0.425) {{(screenHeight+CustomBar)/2}}rpx, transparent 0);z-index:999'>
+  <view style='position:absolute;top:180rpx;left:100rpx ' class='text-lg font-ns'>
+    <view class='margin-bottom-lg ' bindtap='choosetype' data-type='tuwen'>
+      <image src="/icon/icon_tuwen.png" mode='aspectFit' style='width:135px;height:135px '></image>
+    </view>
+    图文介绍
+  </view>
+  <view style='position:absolute;bottom:180rpx;right:100rpx' class='text-lg font-ns'>
+    语音播报
+    <view class='margin-top-lg ' bindtap='choosetype' data-type='audio'>
+      <image src="/icon/icon_yuying.png" mode='aspectFit' style='width:135px;height:135px'></image>
+    </view>
+  </view>
+</view>
+
+
+<cu-custom bgColor="bg-gradual-grey" wx:if='{{!modalshow}}'>
+  <view slot="content">Developer News</view>
+</cu-custom>
+
+<view class='container' style='height:{{windowHeight}}px' hidden='{{modalshow}}'>
+
+  <view class='attach'>
+    <view class='grid col-1'>
+      <view class='pics' bindtap='toggle' wx:if='{{newsaudio}}'></view>
+      <view class='audio' bindtap='toggle' wx:else></view>
+    </view>
+  </view>
+
+  <scroll-view scroll-y='true' class="container" bindtouchstart='handletouchstart' bindtouchmove='handletouchmove' bindtouchend='handletouchend' bindtouchcancel='handletouchcancel' bindscrolltolower='scrolltolower' scroll-top='{{topnum}}'>
+
+    <view wx:if='{{newsaudio}}'>
+      <view wx:for="{{contentList}}" wx:key>
+        <view class='margin-xl solid-bottom padding-tb'>
+          <view class='padding text-center text-lg font-ns' bindtap='todetail' data-target="{{item._id}}" data-index='{{index}}'> {{item.title}}</view>
+
+          <view class="record_box">
+            <view bindtap='playRecord' class='record_btns' data-index='{{index}}' data-url='{{item.url}}'>
+              <text wx:if="{{!isPaused && index ==curAudio}}" class="iconfont iconzanting"></text>
+              <text wx:else class="iconfont iconbofang"></text>
+            </view>
+            <view class='record_wave {{!isPaused && index ==curAudio?"active":""}}'>
+              <view class='wave1'></view>
+              <view class='wave2'></view>
+              <view class='wave3'></view>
+              <view class='wave4'></view>
+              <view class='wave5'></view>
+              <view class='wave6'></view>
+              <view class='wave7'></view>
+              <view class='wave8'></view>
+            </view>
+            <view class='record_time'>
+              <text wx:if="{{lastTime && index==curAudio}}">{{lastTime}}</text>
+            </view>
+            <slot></slot>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <block wx:for="{{contentList}}" wx:key>
+        <view class='  '>
+          <view class="cu-card article no-card solid-bottom solid-top margin-top-sm padding-top-lg" bindtap='todetail' data-target="{{item[0]._id}}">
+            <view class='margin-lr-sm text-xl font-ns '>
+              <image src="{{item[0].cover_img}}" style='width:700rpx;height:370rpx;'></image>
+              {{item[0].title}}
+              <view class='padding-tb-sm text-sm font-ns'>{{item[0].simple_content}}</view>
+            </view>
+            <view class='flex justify-between padding-sm'>
+              <view class='cu-tag round  text-center font-ns '>{{item[0].time}}</view>
+              <view class='cf'>
+                <view class='cu-tag round  fr ligh font-ns' wx:key wx:for="{{item[0].label}}" wx:for-item="tag" wx:for-index="in" wx:if="{{in<2 && tag.length<=5}}">{{tag}}</view>
+              </view>
+            </view>
+          </view>
+          <view class=' ' wx:if="{{item[1].title.length>item[2].title.length}}">
+            <view class="flex  p-xs margin-bottom-sm mb-sm">
+              <view class='flex-treble solid-right radius' bindtap='todetail' data-target="{{item[1]._id}}">
+                <view class='padding-sm text-lg font-ns'>
+                  <view>
+                    <image src="{{item[1].cover_img}}" style='width:390rpx;height:280rpx'></image>
+                    {{item[1].title}}
+                  </view>
+                  <view class='cu-tag round  text-center font-ns padding-xs'>{{item[1].time}}</view>
+                </view>
+              </view>
+              <view class='flex-twice radius' bindtap='todetail' data-target="{{item[2]._id}}">
+                <view class='padding-sm text-lg font-ns'>
+                  <view>
+                    <image src="{{item[2].cover_img}}" style='width:280rpx;height:280rpx'></image>
+                    {{item[2].title}}
+                  </view>
+                  <view class='cu-tag round  text-center font-ns padding-xs'>{{item[2].time}}</view>
+
+                </view>
+
+              </view>
+            </view>
+          </view>
+
+          <view class=' ' wx:else>
+            <view class="flex  p-xs margin-bottom-sm mb-sm">
+              <view class='flex-twice radius ' bindtap='todetail' data-target="{{item[1]._id}}">
+                <view class='padding-sm text-lg font-ns'>
+                <view>
+                  <image src="{{item[2].cover_img}}" style='width:280rpx;height:280rpx'></image>
+                  {{item[1].title}}
+                </view>
+                  <view class='cu-tag round  text-center font-ns padding-xs'>{{item[1].time}}</view>
+
+                </view>
+
+              </view>
+              <view class='flex-treble solid-left radius' bindtap='todetail' data-target="{{item[2]._id}}">
+                <view class='padding-sm text-lg font-ns'>
+                <view>
+                  <image src="{{item[1].cover_img}}" style='width:390rpx;height:280rpx'></image>
+                  {{item[2].title}}
+                </view>
+                   <view class='cu-tag round  text-center font-ns padding-xs'>{{item[2].time}}</view>
+
+                </view>
+
+              </view>
+            </view>
+          </view>
+
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

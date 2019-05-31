@@ -1,0 +1,35 @@
+<cu-custom bgColor="bg-white" isCustom="{{true}}">
+<view slot="content">题库分类</view>
+</cu-custom>
+
+<view class='cu-list menu'>
+  <view class="cu-item arrow" bindtap='tolist' data-difficulty='Easy'> 
+    <view class="content">
+      <text class="text-black font-ns">Easy</text>
+    </view>
+
+  </view>
+  <view class="cu-item arrow"  bindtap='tolist' data-difficulty='Medium'> 
+    <view class="content">
+      <text class="text-black font-ns">Medium</text>
+    </view>
+
+  </view>
+  <view class="cu-item arrow" bindtap='tolist' data-difficulty='Hard' > 
+    <view class="content">
+      <text class="text-black font-ns">Hard</text>
+    </view>
+
+  </view>
+</view>
+
+<view class='cu-list menu'>
+  <view class="cu-item arrow"   wx:for="{{tags}}"  wx:for-index="key"  wx:for-item="value" bindtap='totaglist' data-tag='{{key}}'> 
+    <view class="content">
+      <text class="text-black font-ns">{{key}}</text>
+    </view>
+    <view class="action">
+      <view class="cu-tag round bg-orange light font-ns">{{value}}</view>
+    </view>
+  </view>
+</view>

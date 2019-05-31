@@ -1,0 +1,24 @@
+<import src="/towxml/entry.wxml" />
+
+<cu-custom bgColor="bg-white" isCustom="{{true}}">
+
+</cu-custom>
+<view class='padding-lr'>
+  <view class='text-xl padding-tb-xs' style='line-height:1.5em;width:80%'>
+    {{problem.title}}
+  </view>
+  <view class='cf padding-top-sm'>
+    <view class='fl'>
+      <view class='flex'>
+        <view wx:for='{{tags}}' wx:key>
+          {{item.tag}}/
+        </view>
+      </view>
+    </view>
+    <view class='fr'>
+      <view>{{problem.difficulty}}</view>
+    </view>
+  </view>
+  <template is="entry" data="{{...article}}" />
+  <textarea placeholder="" class='solid' style='width:100%' bindconfirm='notecode'  adjust-position='{{true}}' cursor-spacing='2' data-problemid = '{{problem.id}}' value='{{inputvalue}}'/>
+</view>

@@ -1,0 +1,105 @@
+<cu-custom bgColor="bg-white" isCustom="{{true}}"></cu-custom>
+
+
+<view>
+  <view class="cu-list menu menu-avatar">
+    <view class='tag font-ns text-bold text-xl'> {{isorg?'org':'user'}}</view>
+    <view class="cu-item" style='height:100px'>
+      <view class="cu-avatar round xl" style="background-image:url({{user.avatar_url}});"></view>
+      <view class='padding' style='width:100%;overflow-y:scroll'>
+        <view class='solid-bottom  padding-tb-sm padding-left-xs text-bold font-ns text-xl'>{{user.login}}</view>
+        <view class='text-lg padding-top-xs padding-left-xs font-ns'>
+          {{user.bio!=null?user.bio:''}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='margin-sm'>
+  <scroll-view scroll-x class="bg-white nav " scroll-with-animation scroll-left="{{scrollLeft}}" style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);'>
+    <view class='flex'>
+      <view class="cu-item {{index==TabCur?'text-grey cur':''}} flex-sub text-center font-ns text-xl " wx:for="{{isorg?cloumntabs_org:cloumntabs}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+        {{item}}
+      </view>
+    </view>
+
+  </scroll-view>
+
+  <swiper class="screen-swiper " style='height:{{screenHeight/10*8}}rpx' current='{{TabCur}}' bindchange='tabSelect' bindchange='tabSelect'>
+    <!-- profile -->
+    <swiper-item>
+      <scroll-view scroll-y style='height:100%'>
+        <!-- profile -->
+        <view class='cu-list menu margin-top-xl '>
+          <view class='cu-item '>
+            <view class='content cf'>
+              <text class='fl font-ns'>Name</text>
+              <text class='fr text-grey xs font-ns'>{{user.name?user.name:'......'}}</text>
+            </view>
+          </view>
+          <view class='cu-item '>
+            <view class='content cf'>
+              <text class='fl font-ns'>Email</text>
+              <text class='fr text-grey xs font-ns'>{{user.email?user.email:'......'}}</text>
+            </view>
+          </view>
+          <view class='cu-item '>
+            <view class='content cf'>
+              <text class='fl font-ns'>Location</text>
+              <text class='fr text-grey xs font-ns'>{{user.location?user.location:'......'}}</text>
+            </view>
+          </view>
+          <view class='cu-item '>
+            <view class='content cf'>
+              <text class='fl font-ns'>Website</text>
+              <text class='fr text-grey xs font-ns'>{{user.blog?user.blog:'......'}}</text>
+            </view>
+          </view>
+          <view class='cu-item '>
+            <view class='content cf'>
+              <text class='fl font-ns'>Company</text>
+              <text class='fr text-grey xs font-ns'>{{user.company?user.company:'......'}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+    <!-- repositories -->
+    <swiper-item>
+      <scroll-view scroll-y style='height:100%' bindscrolltolower='scrolltolower'>
+        <repoList data='{{reposdata}}' />
+      </scroll-view>
+    </swiper-item>
+
+    <!-- members -->
+    <swiper-item wx:if="{{isorg}}">
+      <scroll-view scroll-y style='height:100%' bindscrolltolower='scrolltolower'>
+        <userList data='{{membersdata}}' />
+      </scroll-view>
+    </swiper-item>
+
+    <!-- stars -->
+    <swiper-item wx:if="{{!isorg}}">
+      <scroll-view scroll-y style='height:100%' bindscrolltolower='scrolltolower'>
+        <repoList data='{{starsdata}}' />
+      </scroll-view>
+    </swiper-item>
+
+    <!-- followers -->
+    <swiper-item wx:if="{{!isorg}}">
+      <scroll-view scroll-y style='height:100%' bindscrolltolower='scrolltolower'>
+        <userList data='{{followersdata}}' />
+      </scroll-view>
+    </swiper-item>
+
+    <!-- following -->
+    <swiper-item wx:if="{{!isorg}}">
+      <scroll-view scroll-y style=' height:100% ' bindscrolltolower='scrolltolower'>
+        <userList data='{{followingsdata}}' />
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+
+</view>

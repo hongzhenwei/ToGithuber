@@ -1,0 +1,17 @@
+<cu-custom bgColor="bg-white" isCustom="{{true}}">
+<view slot="content">{{options.type=='difficulty'?options.difficulty:options.tag}}</view>
+</cu-custom>
+
+<scroll-view scroll-y style='height:{{windowHeight}}px'  bindscrolltolower='scrolltolower'>
+<view class='cu-list menu'>
+  <view class="cu-item arrow" wx:for="{{problems}}" bindtap='tocollectdetail' data-problemid='{{item.id}}'> 
+    <view class="content">
+      <text class="icon-tagfill text-red"></text>
+      <text class="text-black font-ns">{{item.title}}</text>
+    </view>
+    <view class="action">
+      <view class="cu-tag round bg-orange light font-ns">{{item.difficulty}}</view>
+    </view>
+  </view>
+</view>
+</scroll-view>
