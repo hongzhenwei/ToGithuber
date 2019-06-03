@@ -93,7 +93,7 @@ Page({
       currentTime: innerAudio.currentTime
     })
     this.setData({
-      isPaused: true
+      isPaused: true,
     })
     innerAudio.offEnded()
     innerAudio.offStop()
@@ -223,6 +223,7 @@ Page({
         })
       }, 1000)
     }
+
     wx.onAccelerometerChange(function(e) {
       if (!that.shakeflush) {
         return
@@ -238,8 +239,8 @@ Page({
 
   onHide: function() {
     this.shakeflush = false
+    console.log('ee')
   },
-
   toggle: function(){
     this.setData({
       newsaudio:!this.data.newsaudio

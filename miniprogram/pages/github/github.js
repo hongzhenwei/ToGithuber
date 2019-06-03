@@ -72,9 +72,6 @@ Page({
         })
       }, 1000)
     }
-    this.setData({
-      hidden: false,
-    })
   },
   search(e) {
     console.log(e);

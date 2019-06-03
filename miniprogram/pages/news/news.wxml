@@ -7,14 +7,14 @@
 
 <view class='pure_top'></view>
 
-<view class="cu-modal {{modalshow?'show':''}}" style='bottom:80rpx;background:linear-gradient(160deg, rgba(145, 122, 122, 0.425) {{(screenHeight+CustomBar)/2}}rpx, transparent 0);z-index:999'>
-  <view style='position:absolute;top:180rpx;left:100rpx ' class='text-lg font-ns'>
+<view class="cu-modal {{modalshow?'show':''}}" style='bottom:80rpx;background:rgba(0,0,0,0);z-index:999'>
+  <view style='position:absolute;top:70rpx;left:142rpx ' class='text-lg font-ns'>
     <view class='margin-bottom-lg ' bindtap='choosetype' data-type='tuwen'>
       <image src="/icon/icon_tuwen.png" mode='aspectFit' style='width:135px;height:135px '></image>
     </view>
     图文介绍
   </view>
-  <view style='position:absolute;bottom:180rpx;right:100rpx' class='text-lg font-ns'>
+  <view style='position:absolute;bottom:70rpx;right:142rpx' class='text-lg font-ns'>
     语音播报
     <view class='margin-top-lg ' bindtap='choosetype' data-type='audio'>
       <image src="/icon/icon_yuying.png" mode='aspectFit' style='width:135px;height:135px'></image>
