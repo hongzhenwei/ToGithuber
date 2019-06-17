@@ -4,7 +4,7 @@
 <view>
   <view class="cu-list menu menu-avatar">
 
-    <view class="cu-item" style='height:100px'>
+    <view class="cu-item margin-left margin-right margin-bottom margin-top" style='height:180px;box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);border-radius:20rpx'>
       <view class="cu-avatar round xl" style="background-image:url({{repo.owner.avatar_url}});" bindtap='touser' data-name='{{repo.owner.login}}'></view>
       <view class='padding-xl' style='overflow:scroll'>
         <view class='solid-bottom  padding-bottom-sm text-center text-bold text-xl font-ns'>{{repo.full_name}}</view>
