@@ -41,7 +41,34 @@ ToGithuber，诞生于2019年5月份，小程序是结合本人作为一名高�
 基本功能：使用网络爬虫一次性获取到leetcode官方的题库并保存到小程序的云数据库中，并设置该集合的权限为所有用户仅刻度，每天小程序推送5道随机的题目，并且用户记录下签到日，以及对题目进行收藏和笔记。
 
 ## 项目结果图例
-![](https://github.com/10ngui/ToGithuber/blob/master/docs/1.png)
+
+<div align="center">
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/1.png" height="330" width="190" >
+
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/2.png" height="330" width="190" >
+
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/3.png" height="330" width="190" >
+
+ </div>
+
+ <div align="center">
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/4.png" height="330" width="190" >
+
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/5.png" height="330" width="190" >
+
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/6.png" height="330" width="190" >
+
+ </div>
+
+ <div align="center">
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/7.png" height="330" width="190" >
+
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/8.png" height="330" width="190" >
+
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/9.png" height="330" width="190" >
+
+ </div>
+![]()
 ![](https://github.com/10ngui/ToGithuber/blob/master/docs/2.png)
 ![](https://github.com/10ngui/ToGithuber/blob/master/docs/3.png)
 ![](https://github.com/10ngui/ToGithuber/blob/master/docs/4.png)
@@ -57,7 +84,7 @@ ToGithuber，诞生于2019年5月份，小程序是结合本人作为一名高�
 [https://github.com/10ngui/ToGithuber](https://github.com/10ngui/ToGithuber)
 
 ## 小程序码
-![https://github.com/10ngui/ToGithuber/blob/master/docs/jiagou.png](https://github.com/10ngui/ToGithuber/blob/master/docs/ma.jpg)
+![](https://github.com/10ngui/ToGithuber/blob/master/docs/ma.jpg)
 
 ## 详细开发文档
 [https://github.com/10ngui/ToGithuber/blob/master/ToGithuber-converted.pdf](https://github.com/10ngui/ToGithuber/blob/master/ToGithuber-converted.pdf)
