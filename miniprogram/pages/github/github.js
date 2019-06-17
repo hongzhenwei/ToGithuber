@@ -1,7 +1,7 @@
 const app = getApp();
 const trending = require('../../api/trending/index.js')
 const {checkLogin} = require('../../utils/util.js')
-const loadTrending=function(that,since,language='All'){
+const loadTrending=function(that,since,language='all'){
   wx.showLoading({
     title: 'Loading...'
   })
@@ -30,7 +30,7 @@ Page({
     pickerhidden: true,
     screenHeight:app.globalData.screenHeight,
     windowHeight:app.globalData.windowHeight,
-    since:['Monthly','Weekly','Dayly'],
+    since:['Monthly','Weekly','Daily'],
     language:[
       'All',
       'C', 'CSS', 'C#', 'C++',
@@ -93,9 +93,10 @@ Page({
     var that = this
     var since_cur = this.data.value[0];
     var language_cur = this.data.value[1];
-    var since = this.data.since[since_cur];
-    var language = this.data.language[language_cur];
-    loadTrending(that,since,language);
+    var since = this.data.since[since_cur].toLowerCase();
+    var language = this.data.language[language_cur].toLowerCase();
+    console.log(since,language)
+    loadTrending(that, since ,language);
     const temp = !this.data.pickerhidden
     this.setData({
       pickerhidden: temp
@@ -132,7 +133,7 @@ Page({
     var since = e.currentTarget.dataset.since
     var index = this.data.since.indexOf(since)
     
-    loadTrending(that,e.currentTarget.dataset.since)
+    loadTrending(that,e.currentTarget.dataset.since.toLowerCase())
     this.setData({
       modalshow:false,
       "value[0]":index

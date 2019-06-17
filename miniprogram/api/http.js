@@ -1,6 +1,7 @@
 const {token} = require('../config/secret.js')
 
 const get = (url, { params = {} } = {}) => new Promise((resolve, reject) => {
+  console.log(url,params)
   wx.cloud.callFunction({
     name: 'axios',
     data: {

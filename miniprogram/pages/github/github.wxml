@@ -12,7 +12,7 @@
     </text>
     </view>
     <view class='flex'>
-      <view class='flex-sub solid round bg-green font-ns text-xl' style='height:200rpx;line-height:200rpx;background-color:rgb(185,31,39)' bindtap='choosesince' data-since='Dayly'>Dayly</view>
+      <view class='flex-sub solid round bg-green font-ns text-xl' style='height:200rpx;line-height:200rpx;background-color:rgb(185,31,39)' bindtap='choosesince' data-since='Daily'>Daily</view>
       <view class='flex-sub solid round bg-green margin-lr-sm  font-ns text-xl' style='height:100rpx;line-height:100rpx;background-color:rgb(36,59,73);position:relative;top:50px' bindtap='choosesince' data-since='Weekly'>Weekly</view>
       <view class='flex-sub solid round bg-green font-ns text-xl' style='height:200rpx;line-height:200rpx;background-color:rgb(149,192,183)' bindtap='choosesince' data-since='Monthly'>Monthly</view>
 

@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/back/back",
+    
     "pages/code/code",
     
-    "pages/back/back",
     "pages/news/news",
     "pages/github/github",
     "pages/md/md",
