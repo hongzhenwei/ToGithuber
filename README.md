@@ -43,41 +43,31 @@ ToGithuber，诞生于2019年5月份，小程序是结合本人作为一名高�
 ## 项目结果图例
 
 <div align="center">
-<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/1.png" height="330" width="190" >
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/1.png" height="495" width=285" >
 
-<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/2.png" height="330" width="190" >
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/2.png" height="495" width="285" >
 
-<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/3.png" height="330" width="190" >
-
- </div>
-
- <div align="center">
-<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/4.png" height="330" width="190" >
-
-<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/5.png" height="330" width="190" >
-
-<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/6.png" height="330" width="190" >
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/3.png" height="495" width="285" >
 
  </div>
 
  <div align="center">
-<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/7.png" height="330" width="190" >
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/4.png" height="495" width="285" >
 
-<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/8.png" height="330" width="190" >
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/5.png" height="495" width="285" >
 
-<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/9.png" height="330" width="190" >
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/6.png" height="495" width="285" >
 
  </div>
-![]()
-![](https://github.com/10ngui/ToGithuber/blob/master/docs/2.png)
-![](https://github.com/10ngui/ToGithuber/blob/master/docs/3.png)
-![](https://github.com/10ngui/ToGithuber/blob/master/docs/4.png)
-![](https://github.com/10ngui/ToGithuber/blob/master/docs/5.png)
-![](https://github.com/10ngui/ToGithuber/blob/master/docs/6.png)
-![](https://github.com/10ngui/ToGithuber/blob/master/docs/7.png)
-![](https://github.com/10ngui/ToGithuber/blob/master/docs/8.png)
-![](https://github.com/10ngui/ToGithuber/blob/master/docs/9.png)
 
+ <div align="center">
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/7.png" height="495" width="285" >
+
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/8.png" height="495" width="285" >
+
+<img src="https://github.com/10ngui/ToGithuber/blob/master/docs/9.png" height="495" width="285" >
+
+ </div>
 
 
 ## 源码链接
