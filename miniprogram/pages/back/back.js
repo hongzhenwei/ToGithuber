@@ -17,6 +17,8 @@ Page({
       text: 'Login',
       color: 'olive'
     },
+    cur:1,
+    cur_help:0,
     CustomBar: app.globalData.CustomBar,
     StatusBar: app.globalData.StatusBar,
     windowHeight: app.globalData.windowHeight,
@@ -43,7 +45,12 @@ Page({
     })
   },
 
-  onShow: function() {},
+  onShow: function() {
+    this.setData({
+      cur:1,
+      cur_help:0
+    })
+  },
 
   hideModel(e) {
     var that = this

@@ -94,8 +94,6 @@
           </picker-view-column>
         </picker-view>
       </view>
-
     </view>
-
   </view>
 </view>

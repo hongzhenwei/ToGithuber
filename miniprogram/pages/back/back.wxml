@@ -11,7 +11,39 @@
 
 <view class='container' style='height:{{windowHeight}}px'>
   <!-- 上层轮播图 -->
-  <swiper class="screen-swiper " style='height:100%' bindchange='Swiperchange_y' vertical="{{true}}" current='0'>
+  <swiper class="screen-swiper " style='height:100%' bindchange='Swiperchange_y' vertical="{{true}}" current='{{cur}}'>
+    <swiper-item>
+      <swiper style='height:100%' indicator-dots='true' current='{{cur_help}}'>
+        <swiper-item style='background-color:white'>
+          <view style='width:100%;height:100%;display:flex;justify-content:center;align-items:center'>
+            小程序用户指南
+          </view>
+        </swiper-item>
+        <swiper-item style='background-color:white'>
+          <scroll-view style='height:100%' scroll-y='true'>
+            <view style='width:100%;height:100%;display:flex;justify-content:center;align-items:center'>
+              github trending使用说明
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <swiper-item style='background-color:white'>
+          <scroll-view style='height:100%' scroll-y='true'>
+            <view style='width:100%;height:100%;display:flex;justify-content:center;align-items:center'>
+              developer news使用说明
+            </view>
+
+          </scroll-view>
+        </swiper-item>
+        <swiper-item style='background-color:white'>
+          <scroll-view style='height:100%' scroll-y='true'>
+            <view style='width:100%;height:100%;display:flex;justify-content:center;align-items:center'>
+              code everyday使用说明
+            </view>
+
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </swiper-item>
     <swiper-item>
       <view class="bg-img" style="height:{{height}}rpx;background-image:url({{backgroundimg}});background-position:center;background-size:cover">
         <view class='padding-tb-back'>
@@ -19,21 +51,24 @@
             <view class='flex justify-between'>
               <text class='text-white font-an padding-lr-xs' style='font-size:3.0em;line-height:200rpx'>{{motto}}</text>
               <view class="flex justify-center padding-lr-xs">
-              <view wx:if="{{!hasUserInfo}}" open-type="getUserInfo" class='cu-avatar  round bg-write shadow size'>
-              <button bindgetuserinfo='getUserInfo' open-type='getUserInfo' style='background-color: transparent;border:none'><text class='text-xxl font-ns'>activate</text></button>
-                 </view>
-              <block wx:else>
-                <view class='text-center animation-{{animation=="fade&shake"? "shake" :""}} animation-reverse' bindtap='toggle' data-class='fade&shake'>
-                  <view class="cu-avatar size round solids " style="background-image:url({{userInfo.avatarUrl}})">
-                  </view>
+                <view wx:if="{{!hasUserInfo}}" open-type="getUserInfo" class='cu-avatar  round bg-write shadow size'>
+                  <button bindgetuserinfo='getUserInfo' open-type='getUserInfo' style='background-color: transparent;border:none'>
+                    <text class='text-xxl font-ns'>activate</text>
+                  </button>
                 </view>
-              </block>
+                <block wx:else>
+                  <view class='text-center animation-{{animation=="fade&shake"? "shake" :""}} animation-reverse' bindtap='toggle' data-class='fade&shake'>
+                    <view class="cu-avatar size round solids " style="background-image:url({{userInfo.avatarUrl}})">
+                    </view>
+                  </view>
+                </block>
+              </view>
             </view>
-            </view>
-            
+
           </view>
         </view>
       </view>
     </swiper-item>
+
   </swiper>
 </view>
