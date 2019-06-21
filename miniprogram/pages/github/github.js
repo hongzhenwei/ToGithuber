@@ -1,7 +1,7 @@
 const app = getApp();
 const trending = require('../../api/trending/index.js')
 const {checkLogin} = require('../../utils/util.js')
-const loadTrending=function(that,since,language='all'){
+const loadTrending=function(that,since,language=''){
   wx.showLoading({
     title: 'Loading...'
   })
@@ -94,7 +94,7 @@ Page({
     var since_cur = this.data.value[0];
     var language_cur = this.data.value[1];
     var since = this.data.since[since_cur].toLowerCase();
-    var language = this.data.language[language_cur].toLowerCase();
+    var language = this.data.language[language_cur].toLowerCase() == 'all' ? '' : this.data.language[language_cur].toLowerCase();
     console.log(since,language)
     loadTrending(that, since ,language);
     const temp = !this.data.pickerhidden
