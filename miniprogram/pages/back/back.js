@@ -27,7 +27,6 @@ Page({
     animation: '',
     tabbar: {},
     backgroundimg: 'https://7465-testenv-6a6b5e-1258142945.tcb.qcloud.la/admin_images/wallpaper/earth.jpg?sign=c011ab5a6a2e4ee28658e4b35d495016&t=1559133668',
-
   },
 
   onLoad: function() {
@@ -114,6 +113,11 @@ Page({
   hideModal(){
     this.setData({
       showmodal:false
+    })
+  },
+  switchhelp(e){
+    this.setData({
+      cur_help: e.currentTarget.dataset.tohelp
     })
   }
 })
