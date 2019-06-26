@@ -3,24 +3,43 @@
 <cu-custom bgColor="bg-white" isCustom="{{true}}">
 </cu-custom>
 <view class='padding-lr'>
-  <view class='text-xl padding-tb-xs' style='line-height:1.5em;width:80%'>
-    {{problem.title}}
-  </view>
-  <view class='cf padding-top-sm'>
-    <view class='fl'>
-      <view class='flex'>
-        <view wx:for='{{tags}}' wx:key>
-          {{item.tag}}/
+  <view class='solid-bottom padding-bottom-sm'>
+    <view class='text-xl padding-tb-xs text-bold' style='line-height:1.5em;width:100%;text-align:center'>
+      {{problem.title}}
+    </view>
+    <view class='cf padding-top-sm'>
+      <view class='fl'>
+        <view class='flex text-bold'>
+          <view wx:for='{{tags}}' class='padding-right-xs cu-tag round  fr light font-ns' wx:key>
+            <view wx:if='index<3'>{{item.tag}}</view>
+          </view>
         </view>
       </view>
-    </view>
-    <view class='fr'>
-      <view>{{problem.difficulty}}</view>
+      <view class='fr text-bold '>
+        <view class='cu-tag round  fr light font-ns'>{{problem.difficulty}}</view>
+      </view>
     </view>
   </view>
-  <template is="entry" data="{{...article}}" />
-  <view class='text-center text-xl text-bold solid-bottom' style='width:100%'>我的笔记</view>
-  <block wx:for="{{notes}}" wx:key>
-    <view class='margin-tb-lg padding-sm  solid'><text>{{item.content}}</text></view>
-  </block>
+
+  <view class='padding-bottom-sm'>
+    <template is="entry" data="{{...article}}" />
+  </view>
+  <view class='cf margin-top-lg'>
+    <view class='fl flex margin-bottom-sm'>
+      <view class='cu-tag padding-lr-lg' catchtap='gethelp' data-cur='{{problem.slug}}'>
+        <text class='icon-question padding-right-sm'> </text> help </view>
+    </view>
+    <view class='fr  margin-bottom-sm margin-right-sm' bindtap='shownote'>
+      <image src='../../icon/note.png' style='width:48rpx;height:48rpx' wx:if='{{!shownote}}'></image>
+      <image src='../../icon/note_cur.png' style='width:48rpx;height:48rpx' wx:else></image>
+    </view>
+  </view>
+  <view wx:if="{{shownote}}">
+    <view class='text-center text-xl text-bold solid-bottom padding-bottom-sm' style='width:100%'>我的笔记</view>
+    <block wx:for="{{notes}}" wx:key>
+      <view class='margin-tb-lg padding-sm  solid'>
+        <text>{{item.content}}</text>
+      </view>
+    </block>
+  </view>
 </view>

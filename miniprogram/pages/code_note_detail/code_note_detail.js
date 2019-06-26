@@ -6,7 +6,8 @@ Page({
   data: {
     problem:{},
     article:{},
-    notes:[]
+    notes:[],
+    shownote:false
   },
 
 
@@ -16,7 +17,7 @@ Page({
       problem:wx.getStorageSync(option.problemid)
     })
     let datas = app.towxml.toJson(
-      this.data.problem.content,               // `markdown`或`html`文本内容
+      this.data.problem.content.replace(/Note:/g, 'Tips:'),               // `markdown`或`html`文本内容
       'html'              // `markdown`或`html`
     );
     wx.cloud.database().collection('leetcode_tags').where({
@@ -40,12 +41,22 @@ Page({
       article: datas,
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  gethelp(e) {
+    wx.setClipboardData({
+      data: 'https://leetcode.com/problems/' + e.currentTarget.dataset.cur + '/solution/',
+      success: function () {
+        console.log('https://leetcode.com/problems/' + e.currentTarget.dataset.cur + '/solution/')
+        wx.showToast({
+          title: '链接已复制',
+        })
+      }
+    })
+    console.log(e)
   },
+  shownote(e){
+    this.setData({
+      shownote:!this.data.shownote
+    })
+  }
 
 })

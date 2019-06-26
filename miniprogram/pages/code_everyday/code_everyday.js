@@ -13,7 +13,8 @@ Page({
   data: {
     windowHeight: app.globalData.windowHeight,
     StatusBar: app.globalData.StatusBar,
-    problem_cur: 'left'
+    problem_cur: 'left',
+    shownote:false
   },
 
   /**
@@ -56,9 +57,11 @@ Page({
           })
         }).catch(err => console.log(err))
       })
+      console.log()
+
       //初始化第一条是数据
       let datas = app.towxml.toJson(
-        problems[0].content, // `markdown`或`html`文本内容
+        problems[0].content.replace(/Note:/g, 'Tips:'), // `markdown`或`html`文本内容
         'html' // `markdown`或`html`
       );
       this.setData({
@@ -113,7 +116,11 @@ Page({
   onShow: function () {
 
   },
-
+  shownote: function(){
+    this.setData({
+      shownote:!this.data.shownote
+    })
+  },
   torepodetail(e) {
     wx.navigateTo({
       url: '/pages/repodetail/repodetail?full_name=' + e.currentTarget.dataset['full_name'],
@@ -135,9 +142,16 @@ Page({
   },
   nextproblem(e) {
     i++
+    wx.showLoading({
+      title: 'loading.....',
+    })
+    this.setData({
+      tags:[]
+    })
     wx.cloud.database().collection('leetcode_tags').where({
       question_id: problems[i]['id']
     }).get().then(res => {
+      wx.hideLoading()
       this.setData({
         tags: res.data
       })
@@ -145,10 +159,11 @@ Page({
     })
     console.log(i)
     let datas = app.towxml.toJson(
-      problems[i].content, // `markdown`或`html`文本内容
+      problems[i].content.replace(/Note:/g, 'Tips:'), // `markdown`或`html`文本内容
       'html' // `markdown`或`html`
     );
     this.setData({
+      shownote:false,
       article: datas,
       problem: problems[i],
       problem_cur: i == 4 ? 'right' : '',
@@ -184,10 +199,11 @@ Page({
       console.log(res)
     })
     let datas = app.towxml.toJson(
-      problems[i].content, // `markdown`或`html`文本内容
+      problems[i].content.replace(/Note:/g, 'Tips:'), // `markdown`或`html`文本内容
       'html' // `markdown`或`html`
     );
     this.setData({
+      shownote:false,
       article: datas,
       problem: problems[i],
       problem_cur: i == 0 ? 'left' : '',
@@ -235,6 +251,9 @@ Page({
       console.log(res)
       wx.showToast({
         title: '新增一条笔记',
+      })
+      this.setData({
+        shownote:false
       })
     }).catch(err => console.log(err))
     this.setData({

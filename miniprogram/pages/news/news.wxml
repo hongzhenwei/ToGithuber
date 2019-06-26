@@ -86,16 +86,16 @@
             <view class="flex  p-xs margin-bottom-sm mb-sm">
               <view class='flex-treble solid-right radius' bindtap='todetail' data-target="{{item[1]._id}}">
                 <view class='padding-sm text-lg font-ns'>
-                  <view>
+                  <view class='padding-bottom-lg'>
                     <image src="{{item[1].cover_img}}" style='width:390rpx;height:280rpx'></image>
                     {{item[1].title}}
                   </view>
-                  <view class='cu-tag round  text-center font-ns padding-xs'>{{item[1].time}}</view>
+                  <view class='cu-tag round  text-center font-ns padding-sm'>{{item[1].time}}</view>
                 </view>
               </view>
               <view class='flex-twice radius' bindtap='todetail' data-target="{{item[2]._id}}">
                 <view class='padding-sm text-lg font-ns'>
-                  <view>
+                  <view class='padding-bottom-lg'>
                     <image src="{{item[2].cover_img}}" style='width:280rpx;height:280rpx'></image>
                     {{item[2].title}}
                   </view>
@@ -111,7 +111,7 @@
             <view class="flex  p-xs margin-bottom-sm mb-sm">
               <view class='flex-twice radius ' bindtap='todetail' data-target="{{item[1]._id}}">
                 <view class='padding-sm text-lg font-ns'>
-                <view>
+                <view class='padding-bottom-lg'>
                   <image src="{{item[2].cover_img}}" style='width:280rpx;height:280rpx'></image>
                   {{item[1].title}}
                 </view>
@@ -122,10 +122,10 @@
               </view>
               <view class='flex-treble solid-left radius' bindtap='todetail' data-target="{{item[2]._id}}">
                 <view class='padding-sm text-lg font-ns'>
-                <view>
+                <view class='padding-bottom-lg'>
                   <image src="{{item[1].cover_img}}" style='width:390rpx;height:280rpx'></image>
                   {{item[2].title}}
-                </view>
+                </view >
                    <view class='cu-tag round  text-center font-ns padding-xs'>{{item[2].time}}</view>
 
                 </view>

@@ -23,7 +23,8 @@ Page({
     year,
     month,
     day,
-    str
+    str,
+    showcalendar:false
 
   },
 
@@ -73,7 +74,6 @@ Page({
           var dds = this.data.demo5_days_style
 
           if (dds[dds.length - 1]['day'] == obj['day']) {
-            console.log(JSON.stringify(this.data.demo5_days_style.pop()) == JSON.stringify(obj))
             this.setData({
               showqiandao: false
             })
@@ -121,6 +121,7 @@ Page({
     console.log(dd)
     this.setData({
       showqiandao: false,
+      showcalendar:true,
       demo5_days_style: dd,
       tishi: 'Code Everyday'
     })
@@ -137,5 +138,11 @@ Page({
       }
     }).then(res=>console.log(res))
     
+  },
+  showcalendar(e){
+    console.log(e)
+    this.setData({
+      showcalendar:!this.data.showcalendar
+    })
   }
 })

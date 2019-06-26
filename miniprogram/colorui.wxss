@@ -1435,7 +1435,7 @@ image.loading::after {
   width: 680rpx;
   max-width: 100%;
   background: #f8f8f8;
-  border-radius: 10rpx;
+  border-radius: 50rpx;
   overflow: hidden;
 }
 

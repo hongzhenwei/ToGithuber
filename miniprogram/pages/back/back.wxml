@@ -1,51 +1,58 @@
 <!-- 登录授权时的封面层 -->
-<!-- <view>
-  <view class="cu-modal {{ !hasUserInfo ?'show':''}}">
-    <view class="cu-dialog ">
-      <button bindgetuserinfo='getUserInfo' open-type='getUserInfo'>Login</button>
-    </view>
-  </view>
-</view> -->
+
 
 <tabbar tabbar="{{tabbar}}"></tabbar>
 
-<view class='container' style='height:{{windowHeight}}px'>
-  <!-- 上层轮播图 -->
-  <swiper class="screen-swiper " style='height:100%' bindchange='Swiperchange_y' vertical="{{true}}" current='{{cur}}'>
-    <swiper-item>
-      <swiper style='height:100%' indicator-dots='true' current='{{cur_help}}'>
-        <swiper-item style='background-color:white'>
+
+<view class="cu-modal {{showmodal?'show':''}};" bindtap="hideModal" style='background-color: rgba(252, 246, 246, 0.1);'>
+  <view class="cu-dialog" catchtap style='height:{{screenHeight-CustomBar*5}}rpx;background-color: rgba(252, 246, 246, 0.418);width:750rpx '>
+    <swiper style='height:100%' indicator-dots='true' current='{{cur_help}}'>
+        <swiper-item style='background-color: rgba(252, 246, 246, 0.418);' current='{{cur_help}}'>
           <view style='width:100%;height:100%;display:flex;justify-content:center;align-items:center'>
+            <view style='width:80rpx;font-size:80rpx'>
             小程序用户指南
+            </view>
+            <view style='position:absolute;bottom:5%;right:10%;font-size:20px' class='font-ns'>by 10ngui</view>
           </view>
         </swiper-item>
-        <swiper-item style='background-color:white'>
+        <swiper-item style='background-color: rgba(252, 246, 246, 0.418);'>
           <scroll-view style='height:100%' scroll-y='true'>
             <view style='width:100%;height:100%;display:flex;justify-content:center;align-items:center'>
-              github trending使用说明
+              github trending使用说明（待添加）
             </view>
           </scroll-view>
         </swiper-item>
-        <swiper-item style='background-color:white'>
+        <swiper-item style='background-color: rgba(252, 246, 246, 0.418);'>
           <scroll-view style='height:100%' scroll-y='true'>
             <view style='width:100%;height:100%;display:flex;justify-content:center;align-items:center'>
-              developer news使用说明
+              developer news使用说明（待添加）
             </view>
 
           </scroll-view>
         </swiper-item>
-        <swiper-item style='background-color:white'>
+        <swiper-item style='background-color: rgba(252, 246, 246, 0.418);'>
           <scroll-view style='height:100%' scroll-y='true'>
             <view style='width:100%;height:100%;display:flex;justify-content:center;align-items:center'>
-              code everyday使用说明
+              code everyday使用说明（待添加）
             </view>
 
           </scroll-view>
         </swiper-item>
       </swiper>
-    </swiper-item>
+  </view>
+</view>
+
+
+<view class='container' style='height:{{windowHeight}}px'>
+  <!-- 上层轮播图 -->
+  <swiper class="screen-swiper " style='height:100%'  vertical="{{true}}" current='0'>
     <swiper-item>
       <view class="bg-img" style="height:{{height}}rpx;background-image:url({{backgroundimg}});background-position:center;background-size:cover">
+      <!-- help -->
+      <view style='position:absolute;left:10px;top:{{StatusBar}}px;height:{{CustomBar}}rpx;display:flex;flex-direction:row;' bindtap='showhelp'>
+      <image src='../../icon/help.png' style='width:{{CustomBar/10*9}}rpx'></image>
+      <text style='color:white;margin-left:5px;line-height:{{CustomBar}}rpx;' >help</text>
+      </view>
         <view class='padding-tb-back'>
           <view class=" padding-sm radius ">
             <view class='flex justify-between'>

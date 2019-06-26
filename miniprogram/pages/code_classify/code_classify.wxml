@@ -2,7 +2,7 @@
 <view slot="content">题库分类</view>
 </cu-custom>
 
-<view class='cu-list menu'>
+<view class='cu-list menu padding-bottom-sm margin-lr-sm' style='border-bottom:4rpx solid grey'>
   <view class="cu-item arrow" bindtap='tolist' data-difficulty='Easy'> 
     <view class="content">
       <text class="text-black font-ns">Easy</text>
@@ -23,7 +23,7 @@
   </view>
 </view>
 
-<view class='cu-list menu'>
+<view class='cu-list menu padding-lr-sm'>
   <view class="cu-item arrow"   wx:for="{{tags}}"  wx:for-index="key"  wx:for-item="value" bindtap='totaglist' data-tag='{{key}}'> 
     <view class="content">
       <text class="text-black font-ns">{{key}}</text>

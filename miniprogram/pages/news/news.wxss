@@ -19,8 +19,7 @@ background: linear-gradient(160deg,#1496f1, #E0F0FA);}
   bottom:0;
   z-index: 1;
   border-radius: 70% 20% 0 0;
-  background: white
-}
+ background: rgba(255, 255, 255, 0.658)}
 
 .pure_top::before{
   content: "";
@@ -31,8 +30,7 @@ background: linear-gradient(160deg,#1496f1, #E0F0FA);}
   top:0;
   z-index: 1;
   border-radius: 0 0 70% 20% ;
-  background: white
-}
+ background: rgba(255, 255, 255, 0.658)}
 
 
 

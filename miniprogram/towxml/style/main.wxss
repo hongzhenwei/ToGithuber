@@ -92,7 +92,7 @@
 
 .h2w__main {
     
-    padding-top: 40rpx;
+    padding-top: 10rpx;
 }
 
 /**标题**/
@@ -278,6 +278,10 @@
 
 /**一级ol样式**/
 .h2w__ol {
+  background-color:#f6f8fa;
+  border-color: #eaedf0;
+  border-style:solid;
+  border-width:1rpx;
     list-style-type: decimal;
 }
 
@@ -297,6 +301,7 @@
 
 /**一级ul样式**/
 .h2w__ul {
+  background-color:#f6f8fa;
     list-style-type: disc;
 }
 
@@ -316,7 +321,7 @@
 
 /**块元素**/
 .h2w__p {
-    margin: 0rpx 0 0rpx 0;
+    margin: 20rpx 0 0rpx 0;
     line-height: 1.3em;
     font-size: 1.1em;
     /*word-wrap:break-word;
@@ -347,6 +352,7 @@
 
 .h2w__b,
 .h2w__strong {
+    padding-top:40rpx;
     font-weight: bold;
 }
 

@@ -1,3 +1,7 @@
+.placeholderclass{
+
+}
+
 .attach-right {
   border-radius: 60rpx;
   border: none;

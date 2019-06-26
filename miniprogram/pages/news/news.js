@@ -4,7 +4,8 @@ const { checkLogin} = require('../../utils/util.js')
 let page = 1;
 const limit = 18;
 import {
-  formatSeconds
+  formatSeconds,
+  toReadableTime
 } from "../../utils/util.js"
 
 // =====================================================================================================================
@@ -26,6 +27,8 @@ var loadMore = function(that, type = 'add') {
   }).then(res => {
     console.log(res)
     res.result.map(item => {
+      item.time = toReadableTime(item.time)
+      console.log(toReadableTime(item.time))
       wx.setStorage({
         key: `${item._id}`,
         data: item,
@@ -201,11 +204,8 @@ Page({
   // =========================================================================================================================
 
   onLoad: function() {
-    
     app.editTabbar();
-    
     this.refreshView = this.selectComponent("#refreshView")
-   
   },
 
   onShow: function() {

@@ -6,8 +6,16 @@
 
 <view class="cu-modal {{showmodal?'show':''}}"  style='background-color:rgba(0,0,0,0);z-index:1'>
   <view class="cu-dialog " style='background-color:rgba(0,0,0,0)'>
-    <view class="demo5 shadow solid margin-bottom-xl">
-      <calendar cell-size="25" next="{{false}}" prev="{{false}}" show-more-days="{{true}}" calendar-style="demo5-calendar" header-style="demo5-header" board-style="demo5-board" days-color="{{demo5_days_style}}" binddayClick="dayClick" />
+    <view class="demo5 solid margin-bottom-xl" style='width:100%;min-height:297px;box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);'>
+      <view style='position:absolute;top:6px;right:15px' bindtap='showcalendar'>
+        <image src='../../icon/hide.png' style='width:24px;height:24px' wx:if="{{showcalendar}}"></image>
+        <image src='../../icon/show.png' style='width:24px;height:24px' wx:else></image>
+      </view>
+      <calendar cell-size="25" next="{{false}}" prev="{{false}}" show-more-days="{{true}}" calendar-style="demo5-calendar" header-style="demo5-header" board-style="demo5-board" days-color="{{demo5_days_style}}" binddayClick="dayClick" wx:if="{{showcalendar}}"/>
+      <view wx:else style='font-size:25px;width:100%;height:297px;display:flex;justify-content:center;align-items:center;flex-flow:column'class='font-ns text-bold padding-lr-lg'>
+        <view class='margin-bottom-xl ' style='width:100%;text-align:right'>talk is cheap , show me the code</view>
+        <view style='text-align:right;width:100%'>——Linus Torvalds</view>
+      </view>
     </view>
     <view class='flex margin-top-xl'>
       <view class='flex-twice flex align-center' style='justify-content: center'>

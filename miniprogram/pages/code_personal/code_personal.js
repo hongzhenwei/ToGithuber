@@ -29,8 +29,8 @@ Page({
    */
   onLoad: function (options) {
       this.LoadMoreFavor()
+      noteOnce=1
   },
-
   tabSelect(e) {
     if (noteOnce) {
       noteOnce--

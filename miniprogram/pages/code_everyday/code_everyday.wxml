@@ -10,31 +10,35 @@
 <cu-custom bgColor="bg-white" isCustom="{{true}}"></cu-custom>
 
 <view style='height:100%' class='bg-white'>
-  <view class='padding-lr'>
-    <view class='text-xl padding-tb-xs' style='line-height:1.5em;width:80%'>
-      {{problem.title}}
-    </view>
-    <view class='cf padding-top-sm'>
-      <view class='fl'>
-        <view class='flex'>
-          <view wx:for='{{tags}}' class='padding-right-xs' wx:key>
-            {{item.tag}} /
+  <view class='padding-lr '>
+    <view class='solid-bottom padding-bottom-sm'>
+      <view class='text-xl padding-tb-xs text-bold' style='line-height:1.5em;width:100%;text-align:center'>
+        {{problem.title}}
+      </view>
+      <view class='cf padding-top-sm'>
+        <view class='fl'>
+          <view class='flex text-bold'>
+            <view wx:for='{{tags}}' class='padding-right-xs cu-tag round  fr light font-ns' wx:key>
+              <view wx:if='index<3'>{{item.tag}}</view>
+            </view>
           </view>
         </view>
-      </view>
-      <view class='fr'>
-        <view>{{problem.difficulty}}</view>
+        <view class='fr text-bold '>
+          <view class='cu-tag round  fr light font-ns'>{{problem.difficulty}}</view>
+        </view>
       </view>
     </view>
 
-    <template is="entry" data="{{...article}}" />
+    <view class='solid-bottom padding-bottom-sm'>
+      <template is="entry" data="{{...article}}" />
+    </view>
 
-    <view class='cf margin-top-lg' >
+    <view class='cf margin-top-lg'>
       <view class='fl flex margin-bottom-sm'>
         <view class='cu-tag padding-lr-lg' catchtap='toggleit' data-cur='{{problem.id}}'>
-          <text class="{{likeit?'icon-likefill text-blue':'icon-like'}} padding-right-lg"></text> 收藏</view>
+          <text class="{{likeit?'icon-likefill text-blue':'icon-like'}} padding-right-sm"></text> collect</view>
         <view class='cu-tag padding-lr-lg' catchtap='gethelp' data-cur='{{problem.slug}}'>
-          <text class='icon-question padding-right-lg'> </text> 帮助</view>
+          <text class='icon-question padding-right-sm'> </text> help </view>
       </view>
       <navigator url='/pages/code_note_detail/code_note_detail?problemid={{problem.id}}' wx:if="{{noteshow}}">
         <view class='fr margin-bottom-sm solid-bottom ' style='line-height:1.2rem'>
@@ -43,8 +47,13 @@
           <text class='icon-right'></text>
         </view>
       </navigator>
+      <view wx:else class='fr  margin-bottom-sm margin-right-sm' bindtap='shownote'>
+        <image src='../../icon/note.png' style='width:48rpx;height:48rpx' wx:if='{{!shownote}}'></image>
+        <image src='../../icon/note_cur.png' style='width:48rpx;height:48rpx' wx:else></image>
+      </view>
     </view>
-    <textarea placeholder="" placeholder-style='font-size:1.2em;color:gray' class='solid margin-top-lg' style='width:100%' bindconfirm='notecode' adjust-position='{{true}}' cursor-spacing='2' data-problemid='{{problem.id}}' value='{{inputvalue}}' />
+    <textarea placeholder="" placeholder-class='placeholderclass' class='margin-top-lg shadow' style='width:100%;border:1rpx solid grey;' bindconfirm='notecode' adjust-position='{{true}}' cursor-spacing='2' data-problemid='{{problem.id}}' value='{{inputvalue}}'
+      wx:if="{{shownote}}" />
 
     <view style='height:{{StatusBar*2}}px'></view>
   </view>

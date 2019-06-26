@@ -17,8 +17,8 @@ Page({
       text: 'Login',
       color: 'olive'
     },
-    cur:1,
     cur_help:0,
+    showmodal:false,
     CustomBar: app.globalData.CustomBar,
     StatusBar: app.globalData.StatusBar,
     windowHeight: app.globalData.windowHeight,
@@ -32,6 +32,7 @@ Page({
 
   onLoad: function() {
     app.editTabbar();
+    this.setData({showmodal:false})
     var that = this
     //从全局加载app中查看是否存在用户信息，如果存在则直接获取
     if (app.globalData.userInfo) {
@@ -46,10 +47,7 @@ Page({
   },
 
   onShow: function() {
-    this.setData({
-      cur:1,
-      cur_help:0
-    })
+    this.setData({cur_help:0})
   },
 
   hideModel(e) {
@@ -108,4 +106,14 @@ Page({
       }
     })
   },
+  showhelp(e){
+    this.setData({
+      showmodal:true
+    })
+  },
+  hideModal(){
+    this.setData({
+      showmodal:false
+    })
+  }
 })
