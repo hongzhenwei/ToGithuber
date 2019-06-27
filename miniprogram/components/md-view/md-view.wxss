@@ -1,4 +1,4 @@
-@import "../wxParse/wxParse.wxss";
+@import "../wxParse2/wxParse.wxss";
 
 .md-view {
   font-family: 'Neustadt';

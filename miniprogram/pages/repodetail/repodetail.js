@@ -4,7 +4,7 @@ const repo = require('../../api/repo/index.js')
 const base64 = require('../../utils/base64.js')
 
 //在使用的View中引入WxParse模块
-var WxParse = require('../../components/wxParse/wxParse.js');
+var WxParse = require('../../components/wxParse2/wxParse.js');
 var parseMarkdown = function(readme, that) {
   WxParse.wxParse('readme', 'md', readme, that, 5);
 }

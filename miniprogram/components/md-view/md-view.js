@@ -1,4 +1,4 @@
-const WxParse = require('../wxParse/wxParse.js');
+const WxParse = require('../wxParse2/wxParse.js');
 
 Component({
   properties: {

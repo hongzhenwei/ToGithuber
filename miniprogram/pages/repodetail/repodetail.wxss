@@ -1,2 +1,2 @@
 /* pages/repodetail/repodetail.wxss */
-@import "../../components/wxParse/wxParse.wxss"
+@import "../../components/wxParse2/wxParse.wxss"

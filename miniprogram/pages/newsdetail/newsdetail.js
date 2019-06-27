@@ -24,7 +24,6 @@ Page({
     var dd = htmlcontent.replace(new RegExp('<img', "g"), '<img style="max-width:100%;height:auto" ');
     var hh = dd.replace('&#13;', ' ')
     WxParse.wxParse('article', 'html', hh, that, 5);
-
   },
 
 

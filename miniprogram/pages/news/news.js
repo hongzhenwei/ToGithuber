@@ -239,7 +239,6 @@ Page({
 
   onHide: function() {
     this.shakeflush = false
-    console.log('ee')
   },
   toggle: function(){
     this.setData({

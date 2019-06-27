@@ -1,5 +1,10 @@
  button::after{ border: none; }
  
+.help{
+  background-color:white;
+  border-radius: 80rpx
+}
+
 .padding-tb-back {
   position: absolute;
   width: 100%;

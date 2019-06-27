@@ -1,4 +1,4 @@
-<import src="../../components/wxParse/wxParse.wxml" />
+<import src="../../components/wxParse2/wxParse.wxml" />
 <cu-custom bgColor="bg-white" isCustom="{{true}}"></cu-custom>
 
 <view style='padding:15rpx'>

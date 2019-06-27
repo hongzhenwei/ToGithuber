@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/news/news",
+    
     "pages/back/back",
     "pages/github/github",
     "pages/code/code",
-    "pages/news/news",
     "pages/md/md",
     "pages/code_personal/code_personal",
     "pages/code_everyday/code_everyday",
