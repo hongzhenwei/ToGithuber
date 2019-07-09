@@ -4,7 +4,6 @@
   bottom:10%;
   width:80rpx;
   height:80rpx;
-  background-color: red;
   z-index: 9999;
   border-radius: 100rpx
 }

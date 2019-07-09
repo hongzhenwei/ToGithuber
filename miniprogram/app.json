@@ -1,13 +1,11 @@
 {
   "pages": [
     "pages/back/back",
-    
+    "pages/code/code",
     "pages/cloumn/cloumn",
-    
     "pages/github/github",
     "pages/md/md",
     "pages/news/news",
-    "pages/code/code",
     "pages/code_personal/code_personal",
     "pages/code_everyday/code_everyday",
     "pages/code_classify_list/code_classify_list",
@@ -43,7 +41,6 @@
         "iconPath": "/icon/icon_github.png",
         "selectedIconPath": "/icon/icon_github.png"
       },
-     
       {
         "pagePath": "pages/news/news",
         "text": "news",

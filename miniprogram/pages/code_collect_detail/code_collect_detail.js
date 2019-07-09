@@ -7,7 +7,8 @@ Page({
     problem: {},
     article: {},
     notes: [],
-    shownote:false
+    shownote:false,
+    showen:true
   },
 
 
@@ -16,9 +17,11 @@ Page({
     this.setData({
       problem: wx.getStorageSync(option.problemid)
     })
+    let cont = this.data.showen ? this.data.problem.en_content : this.data.problem.ch_content
     let datas = app.towxml.toJson(
-      this.data.problem.content.replace(/Note:/g, 'Tips:') ,             // `markdown`或`html`文本内容
-      'html'              // `markdown`或`html`
+      cont,
+      // problems[0].content.replace(/Note:/g, 'Tips:'), // `markdown`或`html`文本内容
+      'html' // `markdown`或`html`
     );
     wx.cloud.database().collection('leetcode_tags').where({
       question_id: option.problemid
@@ -81,6 +84,21 @@ Page({
       }
     })
     console.log(e)
+  },
+  toggletranslate(e) {
+
+    this.setData({
+      showen: !this.data.showen
+    })
+    let cont = this.data.showen ? this.data.problem.en_content : this.data.problem.ch_content
+    let datas = app.towxml.toJson(
+      cont,
+      // problems[0].content.replace(/Note:/g, 'Tips:'), // `markdown`或`html`文本内容
+      'html' // `markdown`或`html`
+    );
+    this.setData({
+      article: datas
+    })
   }
 
 })

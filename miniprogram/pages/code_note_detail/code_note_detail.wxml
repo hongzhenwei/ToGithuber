@@ -1,11 +1,14 @@
 <import src="/towxml/entry.wxml" />
 
-<cu-custom bgColor="bg-white" isCustom="{{true}}">
+<view class='translate' bindtap='toggletranslate'>
+  <image wx:if='{{showen}}' src='../../icon/ch.png' style='width:75rpx;height:75rpx'></image>
+  <image wx:else src='../../icon/en.png' style='width:80rpx;height:80rpx'></image>
+</view><cu-custom bgColor="bg-white" isCustom="{{true}}">
 </cu-custom>
 <view class='padding-lr'>
   <view class='solid-bottom padding-bottom-sm'>
     <view class='text-xl padding-tb-xs text-bold' style='line-height:1.5em;width:100%;text-align:center'>
-      {{problem.title}}
+        {{showen?problem.title:problem.ch_title}}
     </view>
     <view class='cf padding-top-sm'>
       <view class='fl'>

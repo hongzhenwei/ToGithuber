@@ -27,7 +27,7 @@ Page({
     wx.showLoading({
       title: 'Loading...',
     })
-    wx.cloud.database().collection('leetcode_questions').where({
+    wx.cloud.database().collection('leetcode').where({
       difficulty: this.data.options.difficulty
     }).skip(page * limit).limit(limit).get().then(res => {
       wx.hideLoading()
@@ -57,7 +57,7 @@ Page({
       var problems = []
       console.log(problems)
       for (var i = 0; i < problemids.length; i++) {
-        wx.cloud.database().collection('leetcode_questions').where({
+        wx.cloud.database().collection('leetcode').where({
           id: problemids[i]
         }).get().then(res => {
           res.data.map(item => {

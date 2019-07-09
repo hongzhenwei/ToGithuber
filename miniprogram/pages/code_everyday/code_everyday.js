@@ -14,7 +14,8 @@ Page({
     windowHeight: app.globalData.windowHeight,
     StatusBar: app.globalData.StatusBar,
     problem_cur: 'left',
-    shownote:false
+    shownote:false,
+    showen:true
   },
 
   /**
@@ -27,21 +28,25 @@ Page({
       title: 'Loading...',
     })
     console.log(Date())
-    var random = Math.floor((Math.random() * 1000) + 1);
-    wx.cloud.database().collection('leetcode_questions').skip(random).limit(5).get().then(res => {
+    var random = Math.floor((Math.random() * 900) + 1);
+    wx.cloud.database().collection('leetcode').skip(random).limit(5).get().then(res => {
+      console.log(res.data[0]['id'])
       wx.cloud.database().collection('leetcode_tags').where({
-        question_id: res.data[0]['id']
+        question_id: res.data[0]['id'] 
       }).get().then(res => {
         wx.hideLoading()
+
+        console.log(res)
         this.setData({
           tags: res.data,
         })
       })
+      console.log(res)
       problems = res.data
 
       problems.map((item, index) => {
         wx.setStorage({
-          key: item.id,
+          key: item.id ,
           data: item,
         })
         wx.cloud.database().collection('leetcode_favors').where({
@@ -57,18 +62,20 @@ Page({
           })
         }).catch(err => console.log(err))
       })
-      console.log()
+      console.log(problems)
 
       //初始化第一条是数据
+      let cont = this.data.showen ? problems[i].en_content : problems[i].ch_content
       let datas = app.towxml.toJson(
-        problems[0].content.replace(/Note:/g, 'Tips:'), // `markdown`或`html`文本内容
+        cont,
+        // problems[0].content.replace(/Note:/g, 'Tips:'), // `markdown`或`html`文本内容
         'html' // `markdown`或`html`
       );
       this.setData({
         article: datas,
         problem: problems[0]
       })
-      // 判断该问题是否有笔记
+      //判断该问题是否有笔记
       wx.cloud.database().collection('leetcode_notes').where({
         _openid: wx.getStorageSync('openid'),
         problemid: this.data.problem.id
@@ -98,6 +105,7 @@ Page({
               createtime: Date()
             }
           })
+          console.log(problems[i].id)
         } else {
           // 需要删除喜欢
           console.log(favors[i])
@@ -149,7 +157,7 @@ Page({
       tags:[]
     })
     wx.cloud.database().collection('leetcode_tags').where({
-      question_id: problems[i]['id']
+      question_id: problems[i]['id'] 
     }).get().then(res => {
       wx.hideLoading()
       this.setData({
@@ -158,8 +166,10 @@ Page({
       console.log(res)
     })
     console.log(i)
+    let cont = this.data.showen ? problems[i].en_content : problems[i].ch_content
     let datas = app.towxml.toJson(
-      problems[i].content.replace(/Note:/g, 'Tips:'), // `markdown`或`html`文本内容
+      cont,
+      // problems[0].content.replace(/Note:/g, 'Tips:'), // `markdown`或`html`文本内容
       'html' // `markdown`或`html`
     );
     this.setData({
@@ -172,7 +182,7 @@ Page({
     // 判断该问题是否有笔记
     wx.cloud.database().collection('leetcode_notes').where({
       _openid: wx.getStorageSync('openid'),
-      problemid: this.data.problem.id
+      problemid: this.data.problem.id 
     }).count().then(res => {
       if (res.total != 0) {
         this.setData({
@@ -191,20 +201,23 @@ Page({
     i--
     console.log(i)
     wx.cloud.database().collection('leetcode_tags').where({
-      question_id: problems[i]['id']
+      question_id: problems[i]['id'] 
     }).get().then(res => {
       this.setData({
         tags: res.data
       })
       console.log(res)
     })
+    let cont = this.data.showen ? problems[i].en_content : problems[i].ch_content
     let datas = app.towxml.toJson(
-      problems[i].content.replace(/Note:/g, 'Tips:'), // `markdown`或`html`文本内容
+      cont,
+      // problems[0].content.replace(/Note:/g, 'Tips:'), // `markdown`或`html`文本内容
       'html' // `markdown`或`html`
     );
     this.setData({
       shownote:false,
       article: datas,
+
       problem: problems[i],
       problem_cur: i == 0 ? 'left' : '',
       likeit: favors[i]
@@ -263,17 +276,28 @@ Page({
   },
   gethelp(e){
     wx.setClipboardData({
-      data: 'https://leetcode.com/problems/' + e.currentTarget.dataset.cur +'/solution/',
+      data: 'https://leetcode-cn.com/problems/' + e.currentTarget.dataset.cur +'/comments/',
       success:function(){
-        console.log('https://leetcode.com/problems/' + e.currentTarget.dataset.cur + '/solution/')
+        console.log('https://leetcode-cn.com/problems/' + e.currentTarget.dataset.cur + '/comments/')
         wx.showToast({
           title: '链接已复制',
         })
       }
     })
-    console.log(e)
   },
   toggletranslate(e){
-    this.setData()
+    
+    this.setData({
+      showen:!this.data.showen
+    })
+    let cont = this.data.showen ? problems[i].en_content : problems[i].ch_content
+    let datas = app.towxml.toJson(
+      cont,
+      // problems[0].content.replace(/Note:/g, 'Tips:'), // `markdown`或`html`文本内容
+      'html' // `markdown`或`html`
+    );
+    this.setData({
+      article:datas
+    })
   }
 })

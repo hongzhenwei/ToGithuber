@@ -55,7 +55,7 @@ Page({
       var problems = [...new Set(res.data.map(item => { return item.problemid }))]
       console.log(problems)
       for (let i = 0; i < problems.length; i++) {
-        wx.cloud.database().collection('leetcode_questions').where({
+        wx.cloud.database().collection('leetcode').where({
           id: problems[i]
         }).get().then(res => {
           console.log(res)
@@ -92,7 +92,7 @@ Page({
       var problems = [...new Set(res.data.map(item => { return item.problemid }))]
       console.log(problems)
       for (let i = 0; i < problems.length; i++) {
-        wx.cloud.database().collection('leetcode_questions').where({
+        wx.cloud.database().collection('leetcode').where({
           id: problems[i]
         }).get().then(res => {
           console.log(res)
