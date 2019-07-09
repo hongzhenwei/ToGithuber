@@ -415,7 +415,7 @@ image.loading::after {
 
 .cu-list.menu {
   display: block;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .cu-list+.cu-list {
@@ -430,6 +430,7 @@ image.loading::after {
   min-height: 100rpx;
   background: #fff;
   padding: 0 30rpx;
+  overflow: inherit
 }
 
 .cu-list.menu>.cu-item::after {
@@ -545,7 +546,7 @@ image.loading::after {
 
 .cu-list.menu-avatar>.cu-item {
   padding-left: 140rpx;
-  height: 110rpx;
+  height: 110px;
 }
 
 .cu-list.menu-avatar>.cu-item>.cu-avatar {
@@ -2470,7 +2471,7 @@ swiper.round-dot .wx-swiper-dot.wx-swiper-dot-active {
 }
 
 .text-sl {
-  font-size: 80rpx;
+  font-size: 50rpx;
 }
 
 .text-xsl {

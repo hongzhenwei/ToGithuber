@@ -13,8 +13,13 @@ Component({
   methods: {
     wxParseTagATap: function (event) {
       console.log(event)
-      const url = event.currentTarget.dataset.src
-
+      let url = event.currentTarget.dataset.src
+      if(url.indexOf('blob')) {
+        console.log('fasdfasd')
+        url = url.replace(/blob/g,'')
+        url =url.replace(/github.com/g,'raw.githubusercontent.com')
+        console.log(url)
+      }
       if (/^#/.test(url)) {
         return wx.showToast({
           title: '暂不支持页内锚点滚动',

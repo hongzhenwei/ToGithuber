@@ -6,6 +6,8 @@
 <view class='attach-left round solid' bindtap='lastproblem' wx:if="{{problem_cur!='left'}}">
   <text class='icon-back ' style='font-size:80rpx'></text>
 </view>
+<!-- 英汉转换 -->
+<view class='translate' bindtap='toggletranslate'></view>
 
 <cu-custom bgColor="bg-white" isCustom="{{true}}"></cu-custom>
 

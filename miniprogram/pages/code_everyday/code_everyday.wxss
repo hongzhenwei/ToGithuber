@@ -1,5 +1,12 @@
-.placeholderclass{
-
+.translate{
+  position: fixed;
+  right:30rpx;
+  bottom:10%;
+  width:80rpx;
+  height:80rpx;
+  background-color: red;
+  z-index: 9999;
+  border-radius: 100rpx
 }
 
 .attach-right {

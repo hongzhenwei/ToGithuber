@@ -8,7 +8,7 @@
 .padding-tb-back {
   position: absolute;
   width: 100%;
-  bottom: 11%;
+  bottom: 5%;
   right: 0;
   z-index: 9999;
 }
@@ -20,7 +20,7 @@
 }
 
 dfa{
-background-color: rgba(133, 43, 236, 0.651)
+background-color: rgba(49, 34, 66, 0.651)
 }
 /* =============================================================================================== */
 

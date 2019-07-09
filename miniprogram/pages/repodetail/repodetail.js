@@ -56,6 +56,7 @@ Page({
     })
   },
   wxParseTagATap(e) {
+    console.log(e)
     wx.setClipboardData({
       data: 'https://github.com/' + this.data.name + '/blob/master/README.md',
     })

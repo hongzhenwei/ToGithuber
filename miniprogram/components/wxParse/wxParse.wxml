@@ -1,13 +1,3 @@
-<!--**
- * author: Di (微信小程序开发工程师)
- * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
- *               垂直微信小程序开发交流社区
- * 
- * github地址: https://github.com/icindy/wxParse
- * 
- * for: 微信小程序富文本解析
- * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
- */-->
 
 <!--基础元素-->
 <template name="wxParseVideo">
@@ -57,12 +47,6 @@
         </block>
       </button>
     </block>
-    <label wx:if="{{item.tag == 'checkbox'}}">
-      <checkbox checked="{{item.attr.checked}}" disabled />
-      <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
-        <template is="wxParse1" data="{{item}}" />
-      </block>
-    </label>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
       <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
@@ -148,12 +132,6 @@
         </block>
       </button>
     </block>
-    <label wx:if="{{item.tag == 'checkbox'}}">
-      <checkbox checked="{{item.attr.checked}}" disabled />
-      <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
-        <template is="wxParse2" data="{{item}}" />
-      </block>
-    </label>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
       <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
@@ -231,12 +209,6 @@
         </block>
       </button>
     </block>
-    <label wx:if="{{item.tag == 'checkbox'}}">
-      <checkbox checked="{{item.attr.checked}}" disabled />
-      <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
-        <template is="wxParse3" data="{{item}}" />
-      </block>
-    </label>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
       <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
@@ -313,12 +285,6 @@
         </block>
       </button>
     </block>
-    <label wx:if="{{item.tag == 'checkbox'}}">
-      <checkbox checked="{{item.attr.checked}}" disabled />
-      <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
-        <template is="wxParse4" data="{{item}}" />
-      </block>
-    </label>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
       <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
@@ -395,12 +361,6 @@
         </block>
       </button>
     </block>
-    <label wx:if="{{item.tag == 'checkbox'}}">
-      <checkbox checked="{{item.attr.checked}}" disabled />
-      <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
-        <template is="wxParse5" data="{{item}}" />
-      </block>
-    </label>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
       <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
@@ -477,12 +437,6 @@
         </block>
       </button>
     </block>
-    <label wx:if="{{item.tag == 'checkbox'}}">
-      <checkbox checked="{{item.attr.checked}}" disabled/>
-      <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
-        <template is="wxParse6" data="{{item}}" />
-      </block>
-    </label>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
       <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
@@ -559,12 +513,6 @@
         </block>
       </button>
     </block>
-    <label wx:if="{{item.tag == 'checkbox'}}">
-      <checkbox checked="{{item.attr.checked}}" disabled />
-      <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
-        <template is="wxParse7" data="{{item}}" />
-      </block>
-    </label>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
       <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
@@ -640,12 +588,6 @@
         </block>
       </button>
     </block>
-    <label wx:if="{{item.tag == 'checkbox'}}">
-      <checkbox checked="{{item.attr.checked}}" disabled />
-      <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
-        <template is="wxParse8" data="{{item}}" />
-      </block>
-    </label>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
       <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
@@ -722,12 +664,6 @@
         </block>
       </button>
     </block>
-    <label wx:if="{{item.tag == 'checkbox'}}">
-      <checkbox checked="{{item.attr.checked}}" disabled />
-      <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
-        <template is="wxParse9" data="{{item}}" />
-      </block>
-    </label>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
       <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
@@ -804,12 +740,6 @@
         </block>
       </button>
     </block>
-    <label wx:if="{{item.tag == 'checkbox'}}">
-      <checkbox checked="{{item.attr.checked}}" disabled />
-      <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
-        <template is="wxParse10" data="{{item}}" />
-      </block>
-    </label>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
       <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
@@ -886,12 +816,6 @@
         </block>
       </button>
     </block>
-    <label wx:if="{{item.tag == 'checkbox'}}">
-      <checkbox checked="{{item.attr.checked}}" disabled />
-      <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
-        <template is="wxParse11" data="{{item}}" />
-      </block>
-    </label>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
       <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
@@ -968,12 +892,6 @@
         </block>
       </button>
     </block>
-    <label wx:if="{{item.tag == 'checkbox'}}">
-      <checkbox checked="{{item.attr.checked}}" disabled />
-      <block wx:for="{{item.nodes}}" wx:for-item="item" wx:key="">
-        <template is="wxParse12" data="{{item}}" />
-      </block>
-    </label>
     <!--li类型-->
     <block wx:elif="{{item.tag == 'li'}}">
       <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">

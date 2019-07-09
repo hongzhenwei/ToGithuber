@@ -77,11 +77,18 @@ App({
           "iconPath": "/icon/icon_github.png",
           "selectedIconPath": "/icon/icon_github_cur.png"
         },
+        
         {
           "pagePath": "/pages/news/news",
           "text": "news",
           "iconPath": "/icon/icon_news.png",
           "selectedIconPath": "/icon/icon_news_cur.png"
+        },
+        {
+          "pagePath": "/pages/cloumn/cloumn",
+          "text": "cloumn",
+          "iconPath": "/icon/icon_cloumn.png",
+          "selectedIconPath": "/icon/icon_cloumn_cur.png"
         },
         {
           "pagePath": "/pages/code/code",

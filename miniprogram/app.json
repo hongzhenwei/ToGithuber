@@ -1,11 +1,13 @@
 {
   "pages": [
-    "pages/news/news",
-    
     "pages/back/back",
+    
+    "pages/cloumn/cloumn",
+    
     "pages/github/github",
-    "pages/code/code",
     "pages/md/md",
+    "pages/news/news",
+    "pages/code/code",
     "pages/code_personal/code_personal",
     "pages/code_everyday/code_everyday",
     "pages/code_classify_list/code_classify_list",
@@ -41,11 +43,18 @@
         "iconPath": "/icon/icon_github.png",
         "selectedIconPath": "/icon/icon_github.png"
       },
+     
       {
         "pagePath": "pages/news/news",
         "text": "news",
         "iconPath": "/icon/icon_news.png",
         "selectedIconPath": "/icon/icon_news.png"
+      },
+      {
+        "pagePath": "pages/cloumn/cloumn",
+        "text": "cloumn",
+        "iconPath": "/icon/icon_cloumn.png",
+        "selectedIconPath": "/icon/icon_cloumn_cur.png"
       },
       {
         "pagePath": "pages/code/code",

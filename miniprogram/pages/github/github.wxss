@@ -7,7 +7,7 @@
   right: 0;
   z-index: -1;
   overflow: hidden;
-  background: white;
+  background: rgba(255, 255, 255, 0.788);
 }
 
 .pure_top::after{

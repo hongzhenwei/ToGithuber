@@ -176,12 +176,11 @@ function strOtherDiscode(str){
 }
 
 function strMoreDiscode(str){
-    // str = str.replace(/\r\n/g,"");  
-    // str = str.replace(/\n/g,"");
+    str = str.replace(/\r\n/g,"");  
+    str = str.replace(/\n/g,"");
 
-  str = str.replace(/<code/g, "<wxxxcode-style");
-  str = str.replace(/<\/code/g, "</wxxxcode-style");
-  return str;
+    str = str.replace(/code/g,"wxxxcode-style");
+    return str;
 }
 
 function strDiscode(str){
@@ -192,20 +191,14 @@ function strDiscode(str){
     str = strMoreDiscode(str);
     return str;
 }
-function urlToHttpUrl(url, rep, baseUrl){
-  if (/^https?:\/\//.test(url)) {
-    return url
-  }
-
-  if (/^\/\//.test(url)) {
-    url = rep + ":" + url
-  }
-
-  if (baseUrl) {
-    url = baseUrl.replace(/\/$/, '') + '/' + url.replace(/^\//, '')
-  }
-
-  return  url
+function urlToHttpUrl(url,rep){
+    
+    var patt1 = new RegExp("^//");
+    var result = patt1.test(url);
+    if(result){
+        url = rep+":"+url;
+    }
+    return  url;
 }
 
 module.exports = {

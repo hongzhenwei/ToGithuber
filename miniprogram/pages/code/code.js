@@ -18,7 +18,7 @@ Page({
     CustomBar: app.globalData.CustomBar,
     showmodal: true,
     showqiandao:true,
-    tishi:`< clink me />`,
+    tishi:`< click me />`,
     demo5_days_style: [],
     year,
     month,

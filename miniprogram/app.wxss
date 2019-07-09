@@ -4,7 +4,24 @@
 
 
 page{
-  background-color: white
+  background-color: white;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+
+}
+
+.oled {
+  background-color: #000;
+  color: #fff;
+}
+
+.dark {
+  background-color: #24292e;
+  color: #fff;
+}
+
+.light {
+  background-color: #fff;
+  color: #333;
 }
 
 .font-an {
@@ -19,12 +36,7 @@ font-family: 'Adventure Normal';
    font-family: 'YRDZST';
 
 }
-.container{
-  background-color: rgba(255, 255, 255, 0);
-  width:100%;
-  overflow: hidden;
 
-}
 .nav-list {
   display: flex;
   flex-wrap: wrap;

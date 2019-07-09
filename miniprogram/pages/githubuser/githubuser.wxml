@@ -1,8 +1,18 @@
 <cu-custom bgColor="bg-white" isCustom="{{true}}"></cu-custom>
 
 
-<view>
-  <view class="cu-list menu menu-avatar">
+<view >
+  <view class="cu-list menu menu-avatar margin-left-sm margin-right-sm margin-bottom-xs-sm " style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);border-radius:20rpx'>
+
+    <view class="cu-item " >
+      <view class="cu-avatar round xl" style="background-image:url({{user.avatar_url}});"></view>
+      <view class='padding-xl' style='width:100%'>
+        <view class='text-bold text-xxl font-ns text-center' >{{user.login}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+  <!-- <view class="cu-list menu menu-avatar">
     <view class='tag font-ns text-bold text-xl'> {{isorg?'org':'user'}}</view>
     <view class="cu-item" style='height:100px'>
       <view class="cu-avatar round xl" style="background-image:url({{user.avatar_url}});"></view>
@@ -14,10 +24,10 @@
       </view>
     </view>
   </view>
-</view>
+</view> -->
 
 <view class='margin-sm'>
-  <scroll-view scroll-x class="bg-white nav " scroll-with-animation scroll-left="{{scrollLeft}}" style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);'>
+  <scroll-view scroll-x class="bg-white nav margin-top-lg" scroll-with-animation scroll-left="{{scrollLeft}}" style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);border-radius:20rpx'>
     <view class='flex'>
       <view class="cu-item {{index==TabCur?'text-grey cur':''}} flex-sub text-center font-ns text-xl " wx:for="{{isorg?cloumntabs_org:cloumntabs}}" wx:key bindtap='tabSelect' data-id="{{index}}">
         {{item}}
@@ -26,7 +36,7 @@
 
   </scroll-view>
 
-  <swiper class="screen-swiper " style='height:{{screenHeight/10*8}}rpx' current='{{TabCur}}' bindchange='tabSelect' bindchange='tabSelect'>
+  <swiper class="screen-swiper " style='height:{{screenHeight/10*8}}rpx;border-radius:20rpx' current='{{TabCur}}' bindchange='tabSelect' bindchange='tabSelect'>
     <!-- profile -->
     <swiper-item>
       <scroll-view scroll-y style='height:100%'>

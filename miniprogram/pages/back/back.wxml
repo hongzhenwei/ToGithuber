@@ -8,13 +8,10 @@
     <swiper style='height:100%;' indicator-dots='true' current='{{cur_help}}'>
       <swiper-item class='help' current='{{cur_help}}'>
 
-        <view style='width:120rpx;font-size:80rpx;position:absolute;height:100%;text-align:center;left:20%;display:flex;align-items:center;background-color:rgba(133, 43, 236, 0.651);' >
+        <view style='width:120rpx;font-size:80rpx;position:absolute;height:100%;text-align:center;left:20%;display:flex;align-items:center;background-color:rgba(49, 34, 66, 0.651)' >
           小程序使用指南
         </view>
-        <!-- <view style='position:absolute;top:20%;right:0;' class='padding-lg    round' bindtap='switchhelp' data-tohelp="1">首页说明</view>
-        <view style='position:absolute;top:30%;right:0' class='padding-lg    round' bindtap='switchhelp' data-tohelp="2">Github Trending</view>
-        <view style='position:absolute;top:50%;right:0' class='padding-lg    round' bindtap='switchhelp' data-tohelp="3">Developer News</view>
-        <view style='position:absolute;top:70%;right:0' class='padding-lg    round' bindtap='switchhelp' data-tohelp="4">Code Everyday</view> -->
+        
         <view style='position:absolute;top:80%;right:10%' class='padding-lg text-bold round' bindtap='switchhelp' data-tohelp="5">by 10ngui</view>
 
 

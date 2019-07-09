@@ -272,5 +272,8 @@ Page({
       }
     })
     console.log(e)
+  },
+  toggletranslate(e){
+    this.setData()
   }
 })

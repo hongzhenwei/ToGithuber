@@ -1,15 +1,4 @@
 
-/**
- * author: Di (微信小程序开发工程师)
- * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
- *               垂直微信小程序开发交流社区
- * 
- * github地址: https://github.com/icindy/wxParse
- * 
- * for: 微信小程序富文本解析
- * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
- */
-
 .wxParse{
     margin: 0 5px;
     font-size: 28rpx;
@@ -20,6 +9,7 @@ view{
     word-break:break-all;
 }
 .wxParse-inline{
+  line-height: 1.7em;
     display: inline;
     margin: 0;
     padding: 0;
@@ -61,10 +51,9 @@ view{
 .wxParse-i,.wxParse-cite,.wxParse-em,.wxParse-var,.wxParse-address{font-style:italic}
 .wxParse-pre,.wxParse-tt,.wxParse-code,.wxParse-kbd,.wxParse-samp{font-family:monospace}
 .wxParse-pre{
+  font-family: 'Neustadt';
   white-space: pre;
-  padding: 12rpx;
   overflow: auto;
-  background-color: #6a7077b7;
 }
 .wxParse-big{font-size:1.17em}
 .wxParse-small,.wxParse-sub,.wxParse-sup{font-size:.83em}
@@ -99,8 +88,6 @@ view{
 
 .wxParse-p > .wxParse-img {
   width: 100% !important;
-  background-color: #FFF;
-  border-radius: 16rpx;
 }
 
 .wxParse-inline > .wxParse-img {
@@ -110,27 +97,19 @@ view{
 .wxParse-blockquote {
     margin: 24rpx 0;
     border-left-color:#10230f;
-    background-color:#bebeb8da;
+    background-color:#e6e7df;
     border-color:#1b1c18;
     border-left-width: 8rpx;
     border-left-style: solid;
     padding: 20rpx;
 }
 
-.light .wxParse-blockquote {
-  background-color: #eeeeee;
-}
-
 .wxParse-code,.wxParse-wxxxcode-style{
     display: inline;
 }
 
-.dark .wxParse-pre, .oled .wxParse-pre {
-    background-color:#272822;
-}
-
-.light .wxParse-pre {
-  background-color: #eeeeee;
+.wxParse-pre {
+    background-color:#e6e7df;
 }
 
 .wxParse-li,.wxParse-li-inner{
@@ -146,7 +125,7 @@ view{
     display: inline-flex;
     width: 5px;
     height: 5px;
-    background-color: #666666;
+    background-color: #FFF;
     margin-right: 5px;
 }
 
@@ -154,16 +133,16 @@ view{
     display: inline-flex;
     width: 10rpx;
     height: 10rpx;
-    background-color: #666666;
+    background-color: #FFF;
     margin-right: 5px;
 }
 .wxParse-li-ring{
     display: inline-flex;
     width: 10rpx;
     height: 10rpx;
-    border: 2rpx solid #666666;
+    border: 2rpx solid #333;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: #fff;
     margin-right: 5px;
 }
 
@@ -218,9 +197,4 @@ view{
 }
 .wxParse-figure {
   overflow: hidden;
-}
-
-checkbox {
-  transform: scale(0.6, 0.6);
-  display: inline-block !important;
 }

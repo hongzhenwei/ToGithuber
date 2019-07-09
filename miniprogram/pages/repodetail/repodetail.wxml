@@ -2,20 +2,18 @@
 <cu-custom bgColor="bg-white" isCustom="{{true}}"></cu-custom>
 
 <view>
+
   <view class="cu-list menu menu-avatar">
 
-    <view class="cu-item margin-left margin-right margin-bottom margin-top" style='height:180px;box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);border-radius:20rpx'>
+    <view class="cu-item margin-left margin-right margin-bottom-xs margin-top" style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);border-radius:20rpx'>
       <view class="cu-avatar round xl" style="background-image:url({{repo.owner.avatar_url}});" bindtap='touser' data-name='{{repo.owner.login}}'></view>
-      <view class='padding-xl' style='overflow:scroll'>
-        <view class='solid-bottom  padding-bottom-sm text-center text-bold text-xl font-ns'>{{repo.full_name}}</view>
-        <view class='text-lg  padding-top-xs font-ns '>
-          {{repo.description}}
-        </view>
+      <view class='padding-xl' style='width:100%'>
+        <view class='text-bold text-xl font-ns text-center' >{{repo.full_name}}</view>
       </view>
     </view>
   </view>
 
-  <view class="grid col-4 cu-list  margin-left margin-right " style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);border-radius:20rpx'>
+  <view class="grid col-4 cu-list  margin-left margin-right " style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);border-radius:20rpx' bindtap='tomore'>
     <view class="cu-item margin-0" style='margin-bottom:0rpx'>
       <text class='icon-attentionfill lg text-gray font-ns'></text>
       <text>{{repo.watchers}}</text>
@@ -33,7 +31,7 @@
     </view>
     <view class="cu-item " style='margin-bottom:0rpx'>
       <text class='icon-formfill lg text-gray font-ns'></text>
-      <text>{{repo.license.key?repo.license.key:'null'}}</text>
+      <text>{{repo.license.key?repo.license.key:' null'}}</text>
 
     </view>
   </view>
@@ -42,13 +40,13 @@
   <view class='cu-list menu card-menu  ' style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);'>
     <view class='cu-item arrow'>
       <view class='content' bindtap='tomore'>
-        <text>more</text>
+        <text class='font-ns text-xl'>more</text>
       </view>
     </view>
   </view>
   <view class='solid-bottom margin text-center'></view>
 
-<view class='padding solid'style='line-height:30px'>
+<view class='padding solid 'style='line-height:30px'>
         <md md='{{readme}}'></md>
 </view>
 </view>

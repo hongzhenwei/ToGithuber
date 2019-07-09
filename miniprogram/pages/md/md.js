@@ -1,16 +1,19 @@
 const http = require('../../api/http.js')
-
+const app = getApp()
 let url = null
 let path = null
 let baseUrl = null
 
 Page({
   data: {
-    md: {}
+    md: {},
+    screenHeight: app.globalData.screenHeight,
+
   },
 
   onLoad: function (options) {
-    url = options.url
+url = options.url ? options.url:'https://raw.githubusercontent.com/521xueweihan/HelloGitHub/master/content/ .md'
+  
     path = encodeURIComponent((decodeURIComponent(url.replace(/.*?([^/]+\.md)$/i, '$1'))))
     baseUrl = url.replace(/([^/]+\.[mM][dD])$/, '')
     console.log(url,path,baseUrl)

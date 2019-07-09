@@ -1,0 +1,96 @@
+
+<tabbar tabbar="{{tabbar}}"></tabbar>
+
+<view style='padding-top:{{CustomBar+StatusBar}}rpx;padding-bottom:160rpx' class='container' >
+
+  <view class="cu-card case {{isCard?'no-card':''}}">
+    <view class="cu-item shadow" bindtap='tomd' data-url='https://raw.githubusercontent.com/521xueweihan/HelloGitHub/master/README.md'>
+      <view class="image">
+        <image src="https://raw.githubusercontent.com/521xueweihan/img/master/hellogithub/logo/readme.gif" mode="widthFix"></image>
+        <view class="cu-tag bg-blue">Github月刊</view>
+        <view class="cu-bar bg-shadeBottom">
+          <view style='width:100%;text-align:center'>
+            HelloGithub 分享
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-card case {{isCard?'no-card':''}}">
+    <view class="cu-item shadow" bindtap='tomd' data-url='https://raw.githubusercontent.com/ruanyf/weekly/master/README.md'>
+      <view class="image">
+        <image src="https://avatars2.githubusercontent.com/u/905434?s=460&v=4" mode="widthFix" style='max-height:550rpx'></image>
+        <view class="cu-tag bg-blue">科技周刊</view>
+        <view class="cu-bar bg-shadeBottom ">
+          <view style='width:100%;text-align:center'>
+            阮一峰 - 科技爱好者周刊
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-card case {{isCard?'no-card':''}}">
+    <view class="cu-item shadow" bindtap='tomd' data-url='https://raw.githubusercontent.com/CyC2018/CS-Notes/master/README.md'>
+      <view class="image">
+        <image src="https://avatars1.githubusercontent.com/u/36260787?s=460&v=4" mode="widthFix" style='max-height:550rpx'></image>
+        <view class="cu-tag bg-blue">面试指南</view>
+        <view class="cu-bar bg-shadeBottom">
+          <view style='width:100%;text-align:center'>
+            Tech Interview Guide
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-card case {{isCard?'no-card':''}}">
+    <view class="cu-item shadow" bindtap='tomd' data-url='https://raw.githubusercontent.com/jackfrued/Python-100-Days/master/README.md'>
+      <view class="image">
+        <image src="http://img4.imgtn.bdimg.com/it/u=3241752090,1493316920&fm=26&gp=0.jpg" mode="widthFix" style='max-height:550rpx'></image>
+        <view class="cu-tag bg-blue">资源教程</view>
+        <view class="cu-bar bg-shadeBottom">
+          <view style='width:100%;text-align:center'>
+            Python - 100天从新手到大师
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-card case {{isCard?'no-card':''}}">
+    <view class="cu-item shadow" bindtap='tomd' data-url='https://raw.githubusercontent.com/Snailclimb/JavaGuide/master/README.md'>
+      <view class="image">
+        <image src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2813659455,902602756&fm=26&gp=0.jpg" mode="widthFix" style='max-height:550rpx'></image>
+        <view class="cu-tag bg-blue">面试指南</view>
+        <view class="cu-bar bg-shadeBottom">
+          <view style='width:100%;text-align:center'>
+            JavaGuide - Java面试进阶指南
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-card case {{isCard?'no-card':''}}">
+    <view class="cu-item shadow" bindtap='tomd' data-url='https://raw.githubusercontent.com/Snailclimb/programmer-advancement/master/README.md'>
+      <view class="image">
+        <image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3066121761,3509014873&fm=26&gp=0.jpg" mode="widthFix" style='max-height:550rpx'></image>
+        <view class="cu-tag bg-blue">必备手册</view>
+        <view class="cu-bar bg-shadeBottom">
+          <view style='width:100%;text-align:center'>
+            程序员修炼之路
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-card case {{isCard?'no-card':''}}">
+    <view class="cu-item shadow" >
+      <view class="image">
+        <image src="https://image.weilanwl.com/gif/loading-1.gif" mode="widthFix" ></image>
+        <view class="cu-bar bg-shadeBottom">
+          <view style='width:100%;text-align:center'>
+            敬请期待......
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

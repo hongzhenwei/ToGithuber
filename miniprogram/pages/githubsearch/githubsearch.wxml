@@ -6,7 +6,7 @@
   </view>
 </view>
 
-<scroll-view scroll-x class="bg-white nav">
+<scroll-view scroll-x class="bg-white nav margin-bottom-xl">
   <view class="flex text-center">
     <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
       {{item}}

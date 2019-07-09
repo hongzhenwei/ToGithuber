@@ -1,0 +1,4 @@
+/* pages/cloumn/cloumn.wxss */
+.container{
+  background: linear-gradient(160deg, rgb(170, 175, 179),#1496f1);
+}

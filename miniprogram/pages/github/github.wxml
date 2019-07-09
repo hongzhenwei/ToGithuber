@@ -55,7 +55,7 @@
     <scroll-view scroll-y='true' style='margin-top:49px;height:{{windowHeight/10*9}}px;' scroll-top='{{topnum}}'>
 
       <block wx:for="{{data}}" wx:key>
-        <view class='solid-bottom padding margin flex' bindtap='torepo' data-fullname="{{item.full_name}}" style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);overflow-x:scroll'>
+        <view class='solid-bottom padding margin flex' bindtap='torepo' data-fullname="{{item.full_name}}" style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);overflow-x:scroll;background-color:rgba(255, 255, 255, 0.588);border-radius:20rpx'>
           <view class='flex-treble margin-right'>
             <view class='padding-xs text-bold text-xl solid-bottom'>
               <image src='../../icon/repo.png' style='width:34rpx;height:34rpx'></image>
@@ -81,9 +81,9 @@
       </view>
       <view class='picker'>
         <view class=" cf padding-sm">
-          <view class='bg-grey radius fl padding-sm font-ns text-lg text-bold' catchtap='togglepicker'>cancel</view>
+          <view class='bg-grey radius fl padding-sm font-ns text-lg text-bold text-center' catchtap='togglepicker' style='min-width:100px'>cancel</view>
 
-          <view class='bg-grey radius fr padding-sm font-ns text-lg text-bold' catchtap='loadchange'>ok</view>
+          <view class='bg-grey radius fr padding-sm font-ns text-lg text-bold text-center' catchtap='loadchange' style='min-width:100px'>ok</view>
         </view>
         <picker-view indicator-style="height: 50px;" style="width: 100%; height: {{screenHeight/3}}rpx;" value="{{value}}" bindchange="pickerchange">
           <picker-view-column>
