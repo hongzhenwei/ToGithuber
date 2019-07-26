@@ -1,17 +1,19 @@
 const app = getApp();
 const trending = require('../../api/trending/index.js')
-const {checkLogin} = require('../../utils/util.js')
-const loadTrending=function(that,since,language=''){
+const {
+  checkLogin
+} = require('../../utils/util.js')
+const loadTrending = function (that, since, language = '') {
   wx.showLoading({
     title: 'Loading...'
   })
-  trending(since,language).then(res=>{
-        that.setData({
-          data:res
-        })
-        wx.hideLoading()
-        console.log(res)
-  }).catch(err=>{
+  trending(since, language).then(res => {
+    that.setData({
+      data: res
+    })
+    wx.hideLoading()
+    console.log(res)
+  }).catch(err => {
     console.log(err)
     wx.showToast({
       title: 'Something wrong',
@@ -24,14 +26,13 @@ Page({
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
-    loadProgress: 0,
     searching: false,
     scrollLeft: 0,
     pickerhidden: true,
-    screenHeight:app.globalData.screenHeight,
-    windowHeight:app.globalData.windowHeight,
-    since:['Monthly','Weekly','Daily'],
-    language:[
+    screenHeight: app.globalData.screenHeight,
+    windowHeight: app.globalData.windowHeight,
+    since: ['Monthly', 'Weekly', 'Daily'],
+    language: [
       'All',
       'C', 'CSS', 'C#', 'C++',
       'Dart', 'Dockerfile',
@@ -47,18 +48,15 @@ Page({
       'TeX',
       'Vue'
     ],
-    data:'',
-    value:[0,0],
-    topnum:0,
-    tabbar:{},
-    modalshow:true,
-    curSince:''
+    data: '',
+    value: [0, 0],
+    topnum: 0,
+    tabbar: {},
+    modalshow: true,
+    curSince: ''
   },
   onLoad() {
     app.editTabbar();
-
-    var that =this;
-    this.menu = this.selectComponent("#menu")
   },
   onShow() {
     if (!checkLogin()) {
@@ -74,69 +72,62 @@ Page({
     }
   },
   search(e) {
-    console.log(e);
     this.setData({
       searching: true,
       moto: e.detail.value
     })
-    this.loadProgress();
-    //当点击确认搜索按钮后会由记载条
   },
 
-  pickerchange(e){
+  pickerchange(e) {
     this.setData({
-      value:e.detail.value
+      value: e.detail.value
     })
   },
 
-  loadchange(e){
+  loadchange(e) {
     var that = this
     var since_cur = this.data.value[0];
     var language_cur = this.data.value[1];
     var since = this.data.since[since_cur].toLowerCase();
     var language = this.data.language[language_cur].toLowerCase() == 'all' ? '' : this.data.language[language_cur].toLowerCase();
-    console.log(since,language)
-    loadTrending(that, since ,language);
-    const temp = !this.data.pickerhidden
+    loadTrending(that, since, language);
     this.setData({
-      pickerhidden: temp
-    })  },
-
-  togglepicker(e){
-    const temp = !this.data.pickerhidden
-    console.log(e)
-    this.setData({
-      pickerhidden:temp
+      pickerhidden: !this.data.pickerhidden,
+      topnum: 0
     })
   },
 
-  torepo(e){
+  togglepicker(e) {
+    const temp = !this.data.pickerhidden
+    console.log(e)
+    this.setData({
+      pickerhidden: temp
+    })
+  },
+
+  torepo(e) {
     console.log(e)
     wx.navigateTo({
       url: '/pages/repodetail/repodetail?full_name=' + e.currentTarget.dataset['fullname'],
     })
   },
 
-  touser(e){
+  tosearch(e) {
     wx.navigateTo({
-      url: '/pages/githubuser/githubuser?name='+e.currentTarget.dataset['name'],
+      url: '/pages/githubsearch/githubsearch?key=' + e.detail.value,
     })
   },
-  tosearch(e){
-    wx.navigateTo({
-      url: '/pages/githubsearch/githubsearch?key='+e.detail.value,
-    })
-  },
-  choosesince(e){
+
+  choosesince(e) {
     console.log(e.currentTarget.dataset.since)
     var that = this
     var since = e.currentTarget.dataset.since
     var index = this.data.since.indexOf(since)
-    
-    loadTrending(that,e.currentTarget.dataset.since.toLowerCase())
+
+    loadTrending(that, e.currentTarget.dataset.since.toLowerCase())
     this.setData({
-      modalshow:false,
-      "value[0]":index
+      modalshow: false,
+      "value[0]": index
     })
   }
 

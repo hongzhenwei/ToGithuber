@@ -29,6 +29,7 @@ App({
         this.globalData.pxHeight = res.screenHeight - res.statusBarHeight - this.globalData.CustomBar;
         this.globalData.windowHeight = res.windowHeight;
         this.globalData.model = res.model
+        console.log(res)
       }
     })
   },

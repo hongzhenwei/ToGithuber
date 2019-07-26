@@ -12,19 +12,6 @@
     </view>
   </view>
 </view>
-  <!-- <view class="cu-list menu menu-avatar">
-    <view class='tag font-ns text-bold text-xl'> {{isorg?'org':'user'}}</view>
-    <view class="cu-item" style='height:100px'>
-      <view class="cu-avatar round xl" style="background-image:url({{user.avatar_url}});"></view>
-      <view class='padding' style='width:100%;overflow-y:scroll'>
-        <view class='solid-bottom  padding-tb-sm padding-left-xs text-bold font-ns text-xl'>{{user.login}}</view>
-        <view class='text-lg padding-top-xs padding-left-xs font-ns'>
-          {{user.bio!=null?user.bio:''}}
-        </view>
-      </view>
-    </view>
-  </view>
-</view> -->
 
 <view class='margin-sm'>
   <scroll-view scroll-x class="bg-white nav margin-top-lg" scroll-with-animation scroll-left="{{scrollLeft}}" style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);border-radius:20rpx'>

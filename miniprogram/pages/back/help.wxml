@@ -1,0 +1,113 @@
+
+<view class="cu-modal {{showmodal?'show':''}};" bindtap="toggleshowhelp" style='background-color: rgba(252, 246, 246, 0.218)'>
+  <view  catchtap style='position:absolute;left:0;height:80%;background-color: rgba(252, 246, 246);width:750rpx;bottom:160rpx;' >
+    <swiper style='height:100%;' indicator-dots='true' current='{{cur_help}}'>
+      <swiper-item class='help' current='{{cur_help}}'>
+
+        <view style='width:120rpx;font-size:80rpx;position:absolute;height:100%;text-align:center;left:20%;display:flex;align-items:center;background-color:rgba(49, 34, 66, 0.651)' >
+          小程序使用指南
+        </view>
+        
+        <view style='position:absolute;top:80%;right:10%' class='padding-lg text-bold round' bindtap='switchhelp' data-tohelp="5">by 10ngui</view>
+
+
+      </swiper-item>
+      <swiper-item class='help'>
+        <scroll-view style='height:100%' scroll-y='true'>
+          <view class='text-bold  padding-tb' style='position:fixed;top:0;left:0;width:100%;text-align:center;z-index:9999;background-color:white'><text class="icon-tag lg text-gray" style='font-size:30rpx;color:black;padding-right:30rpx'></text>首页说明</view>
+          <view class='text-bold padding-top-xl' style='position:fixed;bottom:0;left:0;width:100%;text-align:center;z-index:9999;background-color:white'></view>
+
+          <view class='text-bold     padding-tb'>.</view>
+          <view class='padding solid-bottom'>
+            <image src='https://togithuber-1257562436.cos.ap-chengdu.myqcloud.com/help/help_login.png' mode='widthFix' style='width:100%'></image>
+            <view class='padding-top-sm text-bold '>小程序登录或取消授权</view>
+          </view>
+          <view class='text-bold   padding-tb'></view>
+
+        </scroll-view>
+      </swiper-item>
+      <swiper-item class='help'>
+        <scroll-view style='height:100%' scroll-y='true'>
+          <view class='text-bold     padding-tb' style='position:fixed;top:0;left:0;width:100%;text-align:center;z-index:9999;background-color:white'><text class="icon-tag lg text-gray" style='font-size:30rpx;color:black;padding-right:30rpx'></text>Github Trending使用说明</view>
+          <view class='text-bold padding-top-xl' style='position:fixed;bottom:0;left:0;width:100%;text-align:center;z-index:9999;background-color:white'></view>
+          <view class='text-bold     padding-tb'>.</view>
+          <view class='padding  solid-bottom'>
+            <image src='https://togithuber-1257562436.cos.ap-chengdu.myqcloud.com/help/help_trending1.jpg' mode='widthFix' style='width:100%'></image>
+            <view class='padding-top-sm text-bold'>选择周期查看或搜索</view>
+          </view>
+          <view class='padding  solid-bottom'>
+            <image src='https://togithuber-1257562436.cos.ap-chengdu.myqcloud.com/help/help_trending2.jpg' mode='widthFix' style='width:100%'></image>
+            <view class='padding-top-sm text-bold'>流行项目查看</view>
+          </view>
+          <view class='padding  solid-bottom'>
+            <image src='https://togithuber-1257562436.cos.ap-chengdu.myqcloud.com/help/help_trending3.jpg' mode='widthFix' style='width:100%'></image>
+            <view class='padding-top-sm text-bold'>仓库详情页面</view>
+          </view>
+          <view class='padding  solid-bottom'>
+            <image src='https://togithuber-1257562436.cos.ap-chengdu.myqcloud.com/help/help_trending4.jpg' mode='widthFix' style='width:100%'></image>
+            <view class='padding-top-sm text-bold'>支持仓库内md跳转</view>
+          </view>
+          <view class='text-bold   padding-tb'></view>
+
+        </scroll-view>
+      </swiper-item>
+      <swiper-item class='help'>
+        <scroll-view style='height:100%' scroll-y='true'>
+          <view class='text-bold     padding-tb' style='position:fixed;top:0;left:0;width:100%;text-align:center;z-index:9999;background-color:white'><text class="icon-tag lg text-gray" style='font-size:30rpx;color:black;padding-right:30rpx'></text>Developer News使用说明</view>
+          <view class='text-bold padding-top-xl' style='position:fixed;bottom:0;left:0;width:100%;text-align:center;z-index:9999;background-color:white'></view>
+          <view class='text-bold     padding-tb'>.</view>
+          <view class='padding  solid-bottom'>
+            <image src='https://togithuber-1257562436.cos.ap-chengdu.myqcloud.com/help/help_news1.jpg' mode='widthFix' style='width:100%'></image>
+            <view class='padding-top-sm text-bold'>选择图文或语音</view>
+          </view>
+          <view class='padding  solid-bottom'>
+            <image src='https://togithuber-1257562436.cos.ap-chengdu.myqcloud.com/help/help_news2.jpg' mode='widthFix' style='width:100%'></image>
+            <view class='padding-top-sm text-bold'>图文介绍页面</view>
+          </view>
+          <view class='padding  solid-bottom'>
+            <image src='https://togithuber-1257562436.cos.ap-chengdu.myqcloud.com/help/help_news3.jpg' mode='widthFix' style='width:100%'></image>
+            <view class='padding-top-sm text-bold'>语音播报页面</view>
+          </view>
+          <view class='text-bold   padding-tb'></view>
+
+        </scroll-view>
+      </swiper-item>
+      <swiper-item class='help'>
+        <scroll-view style='height:100%' scroll-y='true'>
+          <view class='text-bold  padding-tb' style='position:fixed;top:0;left:0;width:100%;text-align:center;z-index:9999;background-color:white'><text class="icon-tag lg text-gray" style='font-size:30rpx;color:black;padding-right:30rpx'></text>Code Everyday使用说明</view>
+          <view class='text-bold padding-top-xl' style='position:fixed;bottom:0;left:0;width:100%;text-align:center;z-index:9999;background-color:white'></view>
+          <view class='text-bold     padding-tb'>.</view>
+          <view class='padding  solid-bottom'>
+            <image src='https://togithuber-1257562436.cos.ap-chengdu.myqcloud.com/help/help_code1.jpg' mode='widthFix' style='width:100%'></image>
+            <view class='padding-top-sm text-bold'>首次签到页面</view>
+          </view>
+          <view class='padding  solid-bottom'>
+            <image src='https://togithuber-1257562436.cos.ap-chengdu.myqcloud.com/help/help_code2.jpg' mode='widthFix' style='width:100%'></image>
+            <view class='padding-top-sm text-bold'>签到完成页面</view>
+          </view>
+          <view class='padding  solid-bottom'>
+            <image src='https://togithuber-1257562436.cos.ap-chengdu.myqcloud.com/help/help_code3.jpg' mode='widthFix' style='width:100%'></image>
+            <view class='padding-top-sm text-bold'>收藏与笔记</view>
+          </view>
+          <view class='padding  solid-bottom'>
+            <image src='https://togithuber-1257562436.cos.ap-chengdu.myqcloud.com/help/help_code4.jpg' mode='widthFix' style='width:100%'></image>
+            <view class='padding-top-sm text-bold'>每日随机5题</view>
+          </view>
+          <view class='padding  solid-bottom'>
+            <image src='https://togithuber-1257562436.cos.ap-chengdu.myqcloud.com/help/help_code5.jpg' mode='widthFix' style='width:100%'></image>
+            <view class='padding-top-sm text-bold'>选择题库分类</view>
+          </view>
+          <view class='text-bold   padding-tb'></view>
+
+        </scroll-view>
+      </swiper-item>
+      <swiper-item class='help'>
+        <view class='text-bold     padding-tb' style='position:fixed;top:0;left:0;width:100%;text-align:center;z-index:9999;background-color:white'>by 10ngui</view>
+        <view class='text-bold padding-top-xl' style='position:fixed;bottom:0;left:0;width:100%;text-align:center;z-index:9999;background-color:white'></view>
+        <view style='width:100%;height:100%;display:flex;justify-content:center;align-items:center;flex-direction:column'>
+          <view class='font-ns text-bold lg'>https://github.com/10ngui/ToGithuber</view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

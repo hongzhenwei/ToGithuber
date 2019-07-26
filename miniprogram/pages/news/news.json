@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "refresh-view": "../../components/RefreshView/refresh-view",
+    "refresh-view": "../../components/refreshView/refresh-view",
     "cu-custom": "../../components/cu-custom/cu-custom",
     "tabbar": "../../components/tabbarComponent/tabbar"
   }

@@ -3,20 +3,13 @@ const access_token = require('../../config/secret.js')['token']
 const repo = require('../../api/repo/index.js')
 const base64 = require('../../utils/base64.js')
 
-//在使用的View中引入WxParse模块
-var WxParse = require('../../components/wxParse2/wxParse.js');
-var parseMarkdown = function(readme, that) {
-  WxParse.wxParse('readme', 'md', readme, that, 5);
-}
-
 Page({
   data: {
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     repo: '',
     name: '',
-    contributors: [],
-    readme: ''
+    readme: {}
   },
   onLoad: function(option) {
     console.log(option.full_name)
@@ -34,8 +27,6 @@ Page({
     })
 
     repo(option.full_name).readme().then(data => {
-      wx.hideLoading()
-      console.log(data)
       const {
         content,
         download_url,
@@ -53,12 +44,8 @@ Page({
           baseUrl: baseUrl
         }
       })
-    })
-  },
-  wxParseTagATap(e) {
-    console.log(e)
-    wx.setClipboardData({
-      data: 'https://github.com/' + this.data.name + '/blob/master/README.md',
+      wx.hideLoading()
+
     })
   },
   touser(e) {

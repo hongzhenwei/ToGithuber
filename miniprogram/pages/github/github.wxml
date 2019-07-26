@@ -1,48 +1,25 @@
 <!-- 自定义顶部 -->
 <tabbar tabbar="{{tabbar}}"></tabbar>
-<view class='pure_top'></view>
-
-<view class="cu-modal {{modalshow?'show':''}}" style='background-color:rgba(0,0,0,0);z-index:1'>
-  <view class="cu-dialog "  style='background-color:rgba(0,0,0,0);z-index:1'>
-    <view class="padding-sm text-lg" style='margin-bottom:100rpx'>
-      <image src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=292259422,410673799&fm=26&gp=0.jpg' style='width:200px;height:200px'></image>
-      <text class='block text-xxl font-ns text-bold'>
-      See what the Github community is most excited
-    </text>
-    </view>
-    <view class='flex'>
-      <view class='flex-sub solid round bg-green font-ns text-xl' style='height:200rpx;line-height:200rpx;background-color:rgb(185,31,39)' bindtap='choosesince' data-since='Daily'>Daily</view>
-      <view class='flex-sub solid round bg-green margin-lr-sm  font-ns text-xl' style='height:100rpx;line-height:100rpx;background-color:rgb(36,59,73);position:relative;top:50px' bindtap='choosesince' data-since='Weekly'>Weekly</view>
-      <view class='flex-sub solid round bg-green font-ns text-xl' style='height:200rpx;line-height:200rpx;background-color:rgb(149,192,183)' bindtap='choosesince' data-since='Monthly'>Monthly</view>
-
-    </view>
-    <view class=" margin-bottom-xl solid round shadow" style='margin-top:100rpx'>
-      <view class="cu-bar search" style='min-height:20rpx;width:100%;'>
-        <view class='search-form round bg-white' style='margin: 0 0 0 0;height:80rpx;background-color:white'>
-          <input type="text" confirm-type="search" bindconfirm="tosearch"></input>
-          <text class="icon-search padding-right-lg"></text>
-        </view>
-      </view>
-    </view>
-  </view>
-</view>
+<include src='./cover.wxml' />
 
 <view hidden='{{modalshow}}'>
+
   <cu-custom bgColor="bg-gradual-grey">
     <view slot="content">Github Trending</view>
   </cu-custom>
 
   <view class='container' style='height:{{windowHeight}}px'>
-    <!-- pickerview -->
-    <view style='position:fixed;top:{{CustomBar}}px;width:100%;height:auto;background-color:white;z-index:1;'>
-      <view class="flex solid-bottom  justify-between padding-top-xs padding-bottom-xs">
-
-        <view bindtap='togglepicker' class='attach padding-sm text-center' style='bottom:80rpx'>
-          <view class='solid padding-sm round shadow 'style='background-color: rgba(0, 0, 0, 0.418);color:white'>
-            <view><text class='padding-lr-sm'>{{since[value[0]]}}</text>/
-            <text class='padding-lr-sm'>{{language[value[1]]}}</text></view>
-          </view>
+    <view bindtap='togglepicker' class='attach padding-sm text-center' style='bottom:80rpx'>
+      <view class='solid padding-sm round shadow ' style='background-color: rgba(0, 0, 0, 0.418);color:white'>
+        <view>
+          <text class='padding-lr-sm'>{{since[value[0]]}}</text>/
+          <text class='padding-lr-sm'>{{language[value[1]]}}</text>
         </view>
+      </view>
+    </view>
+
+    <view style='position:fixed;top:{{CustomBar}}px;width:100%;height:auto;background-color:white;z-index:1;'>
+      <view class=" solid-bottom  padding-top-xs padding-bottom-xs">
         <view class="cu-bar search bg-white margin-0" style='min-height:20rpx;width:100%'>
           <view class='search-form round margin-0'>
             <text class="icon-search"></text>
@@ -53,14 +30,13 @@
     </view>
 
     <scroll-view scroll-y='true' style='margin-top:49px;height:{{windowHeight/10*9}}px;' scroll-top='{{topnum}}'>
-
       <block wx:for="{{data}}" wx:key>
-        <view class='solid-bottom padding margin flex' bindtap='torepo' data-fullname="{{item.full_name}}" style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);overflow-x:scroll;background-color:rgba(255, 255, 255, 0.588);border-radius:20rpx'>
+        <view class='solid-bottom padding margin flex repoitem' bindtap='torepo' data-fullname="{{item.full_name}}">
           <view class='flex-treble margin-right'>
             <view class='padding-xs text-bold text-xl solid-bottom'>
               <image src='../../icon/repo.png' style='width:34rpx;height:34rpx'></image>
               {{item.name}}</view>
-            <view class='padding-xs text-content margin-top-sm font-ns text-lg ' >{{item.description}}</view>
+            <view class='padding-xs text-content margin-top-sm font-ns text-lg '>{{item.description}}</view>
           </view>
           <view class="padding-xs text-df flex-sub grid col-1">
             <view class=' radius font-ns' style='line-height:1.7rem;color:rgb(114,120,128)'>
@@ -72,10 +48,8 @@
           </view>
         </view>
       </block>
-
     </scroll-view>
 
-    <!-- picker -->
     <view wx:if="{{!pickerhidden}}">
       <view class='cover' bindtap='togglepicker' catchtouchmove="none" style='height:{{screenHeight/3*2}}rpx'>
       </view>
@@ -95,5 +69,6 @@
         </picker-view>
       </view>
     </view>
+
   </view>
 </view>

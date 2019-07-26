@@ -1,0 +1,26 @@
+<view class='pure_top'></view>
+
+<view class="cu-modal {{modalshow?'show':''}}" style='background-color:rgba(0,0,0,0);z-index:1'>
+  <view class="cu-dialog "  style='background-color:rgba(0,0,0,0);z-index:1'>
+    <view class="padding-sm text-lg" style='margin-bottom:100rpx'>
+      <image src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=292259422,410673799&fm=26&gp=0.jpg' style='width:200px;height:200px'></image>
+      <text class='block text-xxl font-ns text-bold'>
+      See what the Github community is most excited
+    </text>
+    </view>
+    <view class='flex'>
+      <view class='flex-sub solid round bg-green font-ns text-xl daily' bindtap='choosesince' data-since='Daily'>Daily</view>
+      <view class='flex-sub solid round bg-green margin-lr-sm  font-ns text-xl weekly' bindtap='choosesince' data-since='Weekly'>Weekly</view>
+      <view class='flex-sub solid round bg-green font-ns text-xl monthly'  bindtap='choosesince' data-since='Monthly'>Monthly</view>
+
+    </view>
+    <view class=" margin-bottom-xl solid round shadow" style='margin-top:100rpx'>
+      <view class="cu-bar search" style='min-height:20rpx;width:100%;'>
+        <view class='search-form round bg-white' style='margin: 0 0 0 0;height:80rpx;background-color:white'>
+          <input type="text" confirm-type="search" bindconfirm="tosearch"></input>
+          <text class="icon-search padding-right-lg"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

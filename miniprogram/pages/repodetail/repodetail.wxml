@@ -1,7 +1,6 @@
 
 <cu-custom bgColor="bg-white" isCustom="{{true}}"></cu-custom>
 
-<view>
 
   <view class="cu-list menu menu-avatar">
 
@@ -11,7 +10,6 @@
         <view class='text-bold text-xl font-ns text-center' >{{repo.full_name}}</view>
       </view>
     </view>
-  </view>
 
   <view class="grid col-4 cu-list  margin-left margin-right " style='box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);border-radius:20rpx' bindtap='tomore'>
     <view class="cu-item margin-0" style='margin-bottom:0rpx'>
@@ -47,6 +45,6 @@
   <view class='solid-bottom margin text-center'></view>
 
 <view class='padding solid 'style='line-height:30px'>
-        <md md='{{readme}}'></md>
+  <md md='{{readme}}'></md>
 </view>
 </view>
